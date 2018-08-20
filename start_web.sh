@@ -16,4 +16,6 @@ if [ ! -v BASIC_PASSWORD ]; then
   exit
 fi
 
+htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
+
 vendor/bin/heroku-php-apache2 -C apache.conf www
