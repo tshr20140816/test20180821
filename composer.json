@@ -1,0 +1,21 @@
+{
+  "require":
+  {
+    "php": ">=7.2.9",
+    "ext-gd": "*",
+    "ext-apcu": "*",
+    "ext-memcached": "*",
+    "ext-mbstring": "*",
+    "ext-pcntl": "*"
+  }
+  ,
+  "require-dev":
+  {
+    "heroku/heroku-buildpack-php": "*"
+  }
+  ,
+  "scripts":
+  {
+    "post-install-cmd" : "bash ./80_install/post_install_main.sh"
+  }
+}
