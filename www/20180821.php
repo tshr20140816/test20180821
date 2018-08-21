@@ -19,6 +19,16 @@ $tmp = explode('<TR>', $res);
 
 error_log(var_export($tmp, TRUE));
 
+$target = '';
+for ($i = 1; $i < count($tmp); $i++) {
+  // first record skip
+  
+  if (strpos($tmp[$i], ':00</TD>') !== FALSE) {
+    $target = $tmp[$i];
+  }
+}
+error_log('TARGET : ' . $tmp[$i]);
+
 function get_contents($url_) {
   error_log($url_);
   $pid = getmypid();
