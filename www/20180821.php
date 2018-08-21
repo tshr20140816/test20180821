@@ -5,6 +5,7 @@ $res = get_contents($_GET['u']);
 error_log($res);
 
 function get_contents($url_) {
+  error_log($url_);
   $pid = getmypid();
   $ch = curl_init();
   curl_setopt_array($ch,
