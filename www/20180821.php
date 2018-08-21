@@ -4,7 +4,11 @@ $url = urldecode($_GET['u']);
 $res = get_contents($url);
 
 error_log($res);
-echo $res;
+
+$rc = preg_match('/<IFRAME src="(.+?)"/', $res, $match);
+
+error_log($rc);
+error_log(var_export($match, TRUE));
 
 function get_contents($url_) {
   error_log($url_);
