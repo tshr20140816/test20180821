@@ -24,9 +24,9 @@ for ($i = 1; $i < count($tmp); $i++) {
     break;
   }
 }
-error_log('TARGET : ' . $target);
+error_log('TARGET : ' . str_replace(array("\r\n", "\r", "\n"), '', $target);
 
-$res = preg_replace('/<.+?>/', ' ', $target);
+$res = preg_replace('/<.+?>/', '', $target);
 
 error_log('TARGET 2 : ' . $res);
 
