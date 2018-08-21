@@ -34,6 +34,8 @@ $res = trim(preg_replace('/ +/', ' ', $target));
 
 error_log('TARGET 2 : ' . $res);
 
+echo $res;
+
 function get_contents($url_) {
   error_log($url_);
   $pid = getmypid();
