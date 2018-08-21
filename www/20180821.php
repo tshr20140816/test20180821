@@ -13,11 +13,7 @@ error_log(var_export($match, TRUE));
 $url = 'http://www1.river.go.jp' . $match[1];
 $res = get_contents($url);
 
-// error_log($res);
-
 $tmp = explode('<TR>', $res);
-
-error_log(var_export($tmp, TRUE));
 
 $target = '';
 for ($i = 1; $i < count($tmp); $i++) {
@@ -28,7 +24,11 @@ for ($i = 1; $i < count($tmp); $i++) {
     break;
   }
 }
-error_log('TARGET : ' . $tmp[$i]);
+error_log('TARGET : ' . $target);
+
+$res = preg_replace('/<.+?>/', ' ', $target);
+
+error_log('TARGET 2 : ' . $res);
 
 function get_contents($url_) {
   error_log($url_);
