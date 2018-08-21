@@ -24,8 +24,11 @@ for ($i = 1; $i < count($tmp); $i++) {
     break;
   }
 }
-error_log('TARGET : ' . str_replace(array("\r\n", "\r", "\n"), '', $target);
 
+$target = str_replace(array("\r\n", "\r", "\n", "\t"), '', $target);
+  
+error_log('TARGET : ' . $target);
+  
 $res = preg_replace('/<.+?>/', '', $target);
 
 error_log('TARGET 2 : ' . $res);
