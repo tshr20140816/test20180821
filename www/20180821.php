@@ -15,7 +15,7 @@ $res = get_contents($url);
 
 error_log($res);
 
-$tmp = explode('<TBODY>', $res);
+$tmp = explode('<TR>', $res);
 
 error_log(var_export($tmp, TRUE));
 
