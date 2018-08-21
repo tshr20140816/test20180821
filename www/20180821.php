@@ -29,7 +29,8 @@ $target = str_replace(array("\r\n", "\r", "\n", "\t"), '', $target);
   
 error_log('TARGET : ' . $target);
   
-$res = preg_replace('/<.+?>/', '', $target);
+$target = preg_replace('/<.+?>/', '', $target);
+$res = trim(preg_replace('/ +/', ' ', $target));
 
 error_log('TARGET 2 : ' . $res);
 
