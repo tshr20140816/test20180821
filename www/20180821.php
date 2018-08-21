@@ -1,5 +1,6 @@
 <?php
 
+error_log($url1);
 $res = get_contents($url1);
 
 error_log($res);
