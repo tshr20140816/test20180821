@@ -1,6 +1,6 @@
 <?php
 
-$res = get_contents($_GET['u']);
+$res = get_contents($url1);
 
 error_log($res);
 echo $res;
