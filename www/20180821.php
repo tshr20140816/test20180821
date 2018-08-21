@@ -13,7 +13,7 @@ error_log(var_export($match, TRUE));
 $url = 'http://www1.river.go.jp' . $match[1];
 $res = get_contents($url);
 
-error_log($res);
+// error_log($res);
 
 $tmp = explode('<TR>', $res);
 
@@ -23,8 +23,9 @@ $target = '';
 for ($i = 1; $i < count($tmp); $i++) {
   // first record skip
   
-  if (strpos($tmp[$i], ':00</TD>') !== FALSE) {
+  if (strpos($tmp[$i], ':00</TD>') > 0) {
     $target = $tmp[$i];
+    break;
   }
 }
 error_log('TARGET : ' . $tmp[$i]);
