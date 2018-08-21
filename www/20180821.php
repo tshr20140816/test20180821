@@ -10,6 +10,11 @@ $rc = preg_match('/<IFRAME src="(.+?)"/', $res, $match);
 error_log($rc);
 error_log(var_export($match, TRUE));
 
+$url = 'http://www1.river.go.jp' . $match[1];
+$res = get_contents($url);
+
+error_log($res);
+
 function get_contents($url_) {
   error_log($url_);
   $pid = getmypid();
