@@ -15,6 +15,10 @@ $res = get_contents($url);
 
 error_log($res);
 
+$tmp = explode('<TBODY>', $res);
+
+error_log(var_export($tmp, TRUE));
+
 function get_contents($url_) {
   error_log($url_);
   $pid = getmypid();
