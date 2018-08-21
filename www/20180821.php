@@ -21,6 +21,8 @@ function get_contents($url_) {
                     ]);
   @curl_setopt($ch, CURLOPT_TCP_FASTOPEN, TRUE);
   $contents = curl_exec($ch);
+  $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+  error_log($http_code);
   
   curl_close($ch);
   
