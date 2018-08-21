@@ -3,6 +3,7 @@
 $res = get_contents($_GET['u']);
 
 error_log($res);
+echo $res;
 
 function get_contents($url_) {
   error_log($url_);
