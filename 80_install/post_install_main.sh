@@ -11,7 +11,7 @@ tar xf aria2-1.34.0.tar.xz
 cd aria2-1.34.0
 pwd
 ./configure --prefix=/tmp/usr
-make
+make -j8
 make install
 cp -r /tmp/usr ../usr
 
