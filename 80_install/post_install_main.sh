@@ -9,8 +9,11 @@ wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.
 
 tar xf aria2-1.34.0.tar.xz
 cd aria2-1.34.0
-./configure
+pwd
+./configure --prefix=/tmp/usr
 make
+make install
+cp -r /tmp/usr ../usr
 
 echo ${start_date}
 date
