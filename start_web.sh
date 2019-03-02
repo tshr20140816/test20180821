@@ -4,7 +4,7 @@ set -x
 
 export TZ=JST-9
 
-export USER_AGENT=$(curl https://raw.githubusercontent.com/tshr20140816/heroku-mode-06/master/useragent.txt)
+export USER_AGENT=$(curl https://raw.githubusercontent.com/tshr20140816/heroku-mode-07/master/useragent.txt)
 
 if [ ! -v BASIC_USER ]; then
   echo "Error : BASIC_USER not defined."
