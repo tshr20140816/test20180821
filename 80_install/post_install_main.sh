@@ -23,6 +23,7 @@ make install
 
 ls -lang /tmp/usr
 ls -lang /tmp/usr/bin
+ls -lang /tmp/usr/share
 
 cd ..
 
