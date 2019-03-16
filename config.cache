@@ -329,7 +329,6 @@ gt_cv_func_CFLocaleCopyCurrent=${gt_cv_func_CFLocaleCopyCurrent=no}
 gt_cv_func_CFPreferencesCopyAppValue=${gt_cv_func_CFPreferencesCopyAppValue=no}
 gt_cv_func_gnugettext1_libc=${gt_cv_func_gnugettext1_libc=yes}
 lt_cv_ar_at_file=${lt_cv_ar_at_file=@}
-lt_cv_archive_cmds_need_lc=${lt_cv_archive_cmds_need_lc=no}
 lt_cv_deplibs_check_method=${lt_cv_deplibs_check_method=pass_all}
 lt_cv_file_magic_cmd=${lt_cv_file_magic_cmd='$MAGIC_CMD'}
 lt_cv_file_magic_test_file=${lt_cv_file_magic_test_file=}
