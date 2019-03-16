@@ -33,7 +33,7 @@ tar xf aria2-1.34.0.tar.xz
 cd aria2-1.34.0
 pwd
 ./configure --help
-./configure --prefix=/tmp/usr
+./configure --prefix=/tmp/usr --config-cache
 
 cat config.cache
 
