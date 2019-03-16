@@ -82,7 +82,12 @@ else
 fi
 
 timeout -sKILL 120 make -j$(grep -c -e processor /proc/cpuinfo)
-# make install
+if [ $? != 0 ]; then
+  echo 'time out'
+else
+  time make install
+fi
+
 # cp -r /tmp/usr ../usr
 
 popd
