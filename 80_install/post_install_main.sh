@@ -16,7 +16,6 @@ fi
 
 if [ -e ccache ]; then
   mkdir -p /tmp/usr/bin
-  chmod /tmp/usr/bin
   cp ccache /tmp/usr/bin/
   chmod +x /tmp/usr/bin/ccache
 else
