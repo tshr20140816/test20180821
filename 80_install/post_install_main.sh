@@ -88,6 +88,9 @@ else
   time make install
 fi
 
+ls -lang /tmp/usr
+ls -lang /tmp/usr/bin
+
 # cp -r /tmp/usr ../usr
 
 popd
@@ -98,13 +101,11 @@ cp /tmp/config.cache www/
 ccache -s
 
 pushd /tmp
-zip -9r ccache_cache.zip ./ccache
+# zip -9r ccache_cache.zip ./ccache
 popd
 
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
-
-cp /tmp/ccache_cache.zip www/
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
 ls -lang www/
 
