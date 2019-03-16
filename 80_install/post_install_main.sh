@@ -98,16 +98,15 @@ ls -lang /tmp/usr/bin
 popd
 popd
 
-cp /tmp/usr/bin/aria2 www/
+cp /tmp/usr/bin/aria2c www/
 cp /tmp/config.cache www/
 
 ccache -s
 
-pushd /tmp
-# zip -9r ccache_cache.zip ./ccache
-popd
-
 if [ $result = 'NG' ]; then
+  pushd /tmp
+  zip -9r ccache_cache.zip ./ccache
+  popd
   time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
   time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 fi
