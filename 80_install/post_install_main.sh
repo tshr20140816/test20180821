@@ -52,6 +52,12 @@ ln -s ccache c++
 popd
 
 ccache -s
+ccache -z
+
+pushd /tmp
+curl -u ${webdav_user}:${webdav_password} ${webdav_url} -O
+unzip -q ccache_cache.zip
+popd
 
 pushd /tmp
 
