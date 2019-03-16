@@ -38,7 +38,7 @@ tar xf aria2-1.34.0.tar.xz
 pushd aria2-1.34.0
 pwd
 ./configure --help
-./configure --prefix=/tmp/usr --config-cache
+./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
 
 cat config.cache
 cp config.cache /tmp/
