@@ -5,12 +5,17 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
+export PATH="/tmp/usr/bin:${PATH}"
+
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
 if [ -e ccache ]; then
-  echo 'HELLO'
-fi
+  mkdir /tmp/usr/bin
+  chmod /tmp/usr/bin
+  cp ccache /tmp/usr/bin/
+  chmod +x /tmp/usr/bin/ccache
+else
 pushd /tmp
 
 wget https://www.samba.org/ftp/ccache/ccache-3.6.tar.xz
@@ -32,6 +37,19 @@ popd
 popd
 
 cp /tmp/usr/bin/ccache www/
+fi
+
+export CCACHE_DIR=/tmp/ccache
+
+pushd /tmp/usr/bin
+ln -s ccache gcc
+ln -s ccache g++
+ln -s ccache cc
+ln -s ccache c++
+popd
+
+ccache -s
+ccache -z
 
 pushd /tmp
 
