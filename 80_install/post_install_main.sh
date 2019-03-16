@@ -84,7 +84,9 @@ fi
 timeout -sKILL 120 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
+  result='NG'
 else
+  result='OK'
   time make install
 fi
 
@@ -105,8 +107,10 @@ pushd /tmp
 # zip -9r ccache_cache.zip ./ccache
 popd
 
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+if [ $result = 'NG' ]; then
+  time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+  time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+fi
 
 ls -lang www/
 
