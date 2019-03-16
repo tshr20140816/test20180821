@@ -8,6 +8,9 @@ chmod 777 start_web.sh
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
+if [ -e ccache ]; then
+  echo 'HELLO'
+fi
 pushd /tmp
 
 wget https://www.samba.org/ftp/ccache/ccache-3.6.tar.xz
