@@ -10,6 +10,10 @@ export PATH="/tmp/usr/bin:${PATH}"
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
+pushd /tmp
+wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz &
+popd
+
 if [ -e config.cache ]; then
   cp config.cache /tmp/
 fi
@@ -62,7 +66,8 @@ popd
 
 pushd /tmp
 
-wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz
+#wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz
+wait
 
 tar xf aria2-1.34.0.tar.xz
 pushd aria2-1.34.0
