@@ -15,7 +15,7 @@ if [ -e config.cache ]; then
 fi
 
 if [ -e ccache ]; then
-  mkdir /tmp/usr/bin
+  mkdir -p /tmp/usr/bin
   chmod /tmp/usr/bin
   cp ccache /tmp/usr/bin/
   chmod +x /tmp/usr/bin/ccache
@@ -80,6 +80,13 @@ popd
 cp /tmp/config.cache www/
 
 ccache -s
+
+pushd /tmp
+zip -9r ccache_cache.zip ./ccache
+popd
+cp /tmp/ccache_cache.zip www/
+
+ls -lang www/
 
 echo ${start_date}
 date
