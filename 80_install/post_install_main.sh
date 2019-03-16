@@ -98,5 +98,7 @@ cp /tmp/ccache_cache.zip www/
 
 ls -lang www/
 
+ccache -s
+
 echo ${start_date}
 date
