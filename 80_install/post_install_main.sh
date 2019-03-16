@@ -8,12 +8,12 @@ chmod 777 start_web.sh
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
-cd /tmp
+pushd /tmp
 
 wget https://www.samba.org/ftp/ccache/ccache-3.6.tar.xz
 
 tar xf ccache-3.6.tar.xz
-cd ccache-3.6
+pushd ccache-3.6
 
 ./configure --help
 ./configure --prefix=/tmp/usr
@@ -25,21 +25,31 @@ ls -lang /tmp/usr
 ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/share
 
-cd ..
+popd
+popd
+
+cp /tmp/usr/bin/ccache www/
+
+pushd /tmp
 
 wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz
 
 tar xf aria2-1.34.0.tar.xz
-cd aria2-1.34.0
+pushd aria2-1.34.0
 pwd
 ./configure --help
 ./configure --prefix=/tmp/usr --config-cache
 
 cat config.cache
-
+cp config.cache /tmp/
 # make -j8
 # make install
 # cp -r /tmp/usr ../usr
+
+popd
+popd
+
+cp /tmp/config.cache www/
 
 echo ${start_date}
 date
