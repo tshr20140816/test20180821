@@ -81,7 +81,7 @@ else
   cp config.cache /tmp/
 fi
 
-timeout -sKILL 60 make -j2
+timeout -sKILL 120 make -j2
 # make install
 # cp -r /tmp/usr ../usr
 
