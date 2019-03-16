@@ -96,6 +96,7 @@ ls -lang /tmp/usr/bin
 popd
 popd
 
+cp /tmp/usr/bin/aria2 www/
 cp /tmp/config.cache www/
 
 ccache -s
