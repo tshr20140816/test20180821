@@ -10,8 +10,6 @@ export PATH="/tmp/usr/bin:${PATH}"
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
-printenv
-
 if [ -e config.cache ]; then
   cp config.cache /tmp/
 fi
@@ -57,8 +55,8 @@ ccache -s
 ccache -z
 
 pushd /tmp
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-unzip -q ccache_cache.zip
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+time unzip -q ccache_cache.zip
 popd
 
 pushd /tmp
@@ -92,8 +90,8 @@ pushd /tmp
 zip -9r ccache_cache.zip ./ccache
 popd
 
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
 cp /tmp/ccache_cache.zip www/
 
