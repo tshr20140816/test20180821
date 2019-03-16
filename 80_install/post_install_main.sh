@@ -90,8 +90,8 @@ pushd /tmp
 zip -9r ccache_cache.zip ./ccache
 popd
 
-curl -u ${webdav_user}:${webdav_password} -X DELETE ${webdav_url}
-curl -u ${webdav_user}:${webdav_password} -X PUT ${webdav_url} -F "file=@/tmp/ccache_cache.zip"
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
 cp /tmp/ccache_cache.zip www/
 
