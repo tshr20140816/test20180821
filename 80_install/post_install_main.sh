@@ -10,6 +10,10 @@ export PATH="/tmp/usr/bin:${PATH}"
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 
+if [ -e config.cache ]; then
+  cp config.cache /tmp/
+fi
+
 if [ -e ccache ]; then
   mkdir /tmp/usr/bin
   chmod /tmp/usr/bin
@@ -49,7 +53,6 @@ ln -s ccache c++
 popd
 
 ccache -s
-ccache -z
 
 pushd /tmp
 
@@ -59,11 +62,15 @@ tar xf aria2-1.34.0.tar.xz
 pushd aria2-1.34.0
 pwd
 ./configure --help
-./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
+if [ -e /tmp/config.cache ]; then
+  ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
+else
+  ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
+  cat config.cache
+  cp config.cache /tmp/
+fi
 
-cat config.cache
-cp config.cache /tmp/
-# make -j8
+timeout -sKILL 120 make -j2
 # make install
 # cp -r /tmp/usr ../usr
 
@@ -71,6 +78,8 @@ popd
 popd
 
 cp /tmp/config.cache www/
+
+ccache -s
 
 echo ${start_date}
 date
