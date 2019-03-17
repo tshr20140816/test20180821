@@ -104,8 +104,6 @@ popd
 cp /tmp/usr/bin/aria2c www/
 cp /tmp/config.cache www/
 
-ccache -s
-
 if [ $result = 'NG' ]; then
   pushd /tmp
   zip -9qr ccache_cache.zip ./ccache
