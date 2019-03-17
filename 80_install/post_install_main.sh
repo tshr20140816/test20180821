@@ -9,6 +9,7 @@ export PATH="/tmp/usr/bin:${PATH}"
 
 export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
+export LDFLAGS="-fuse-ld=gold"
 
 g++ -fuse-ld=gold -Wl,--version
 
