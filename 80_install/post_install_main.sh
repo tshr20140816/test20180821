@@ -11,7 +11,10 @@ export CFLAGS="-O2 -march=native"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
+gcc --version
 g++ -fuse-ld=gold -Wl,--version
+
+exit
 
 pushd /tmp
 wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz &
