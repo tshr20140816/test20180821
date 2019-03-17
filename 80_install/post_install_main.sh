@@ -7,7 +7,7 @@ chmod 777 start_web.sh
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-export CFLAGS="-O2 -march=native"
+export CFLAGS="-O2 -march=native -mtune=native"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
