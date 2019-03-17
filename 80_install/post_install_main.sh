@@ -108,7 +108,7 @@ ccache -s
 
 if [ $result = 'NG' ]; then
   pushd /tmp
-  zip -9r ccache_cache.zip ./ccache
+  zip -9qr ccache_cache.zip ./ccache
   popd
   time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
   time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
