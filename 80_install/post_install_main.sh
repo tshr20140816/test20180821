@@ -77,9 +77,9 @@ pushd aria2-1.34.0
 pwd
 ./configure --help
 if [ -e /tmp/config.cache ]; then
-  ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
+  time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
 else
-  ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
+  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
   cat config.cache
   cp config.cache /tmp/
 fi
