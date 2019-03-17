@@ -13,8 +13,6 @@ export LDFLAGS="-fuse-ld=gold"
 
 g++ -fuse-ld=gold -Wl,--version
 
-exit
-
 pushd /tmp
 wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz &
 popd
