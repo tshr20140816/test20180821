@@ -87,7 +87,7 @@ else
   cp config.cache /tmp/
 fi
 
-time timeout -sKILL 120 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 180 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
   result='NG'
