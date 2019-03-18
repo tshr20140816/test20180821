@@ -152,7 +152,10 @@ else
   cp config.cache /tmp/
 fi
 
-time timeout -sKILL 30 make -j$(grep -c -e processor /proc/cpuinfo)
+date
+check_point_010_date=$(date)
+
+time timeout -sKILL 40 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
   result='NG'
@@ -183,4 +186,5 @@ ls -lang www/
 ccache -s
 
 echo ${start_date}
+echo $(check_point_010_date)
 date
