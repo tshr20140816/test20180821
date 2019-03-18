@@ -84,13 +84,13 @@ gcc --version
 ccache -s
 ccache -z
 
+wait
+
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 time unzip -q ccache_cache.zip
 rm -f ccache_cache.zip
 popd
-
-wait
 
 pushd /tmp
 
