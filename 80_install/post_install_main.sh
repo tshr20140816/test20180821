@@ -130,7 +130,8 @@ pushd cmake-3.14.0-Linux-x86_64
 ls -lang bin
 ls -lang share
 cp -f bin/* /tmp/usr/bin/
-cp -f share /tmp/usr
+cp -rf share /tmp/usr
+ls -lang /tmp/usr
 popd
 
 # libssh2
