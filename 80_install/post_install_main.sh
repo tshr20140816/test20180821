@@ -154,7 +154,8 @@ tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
 mkdir out
 pushd out
-time ../configure-cmake --prefix=/tmp/usr --enable-static=yes --enable-shared=no
+../configure-cmake --help
+time ../configure-cmake --prefix=/tmp/usr
 ls -lang
 time make -j2
 time make install
