@@ -5,6 +5,10 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
+echo $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
+
+exit
+
 export PATH="/tmp/usr/bin:${PATH}"
 
 export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
