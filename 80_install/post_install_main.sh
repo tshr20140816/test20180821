@@ -81,17 +81,29 @@ wait
 
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-time unzip -q ccache_cache.zip
-rm -f ccache_cache.zip
+if [ -e ccache_cache.zip ]; then
+  time unzip -q ccache_cache.zip
+  rm -f ccache_cache.zip
+fi
 popd
 
 pushd /tmp
 tar xf nghttp2-1.37.0.tar.xz
 pushd nghttp2-1.37.0
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --enable-lib-only
+time make -j2
+time make install
 popd
 popd
+
+ccache -s
+
+pushd /tmp
+zip -9qr ccache_cache.zip ./ccache
+popd
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
 exit
 
