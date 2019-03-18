@@ -41,7 +41,7 @@ pushd ccache-3.6
 ./configure --help
 ./configure --prefix=/tmp/usr
 
-make -j8
+make -j2
 make install
 
 ls -lang /tmp/usr
@@ -80,9 +80,10 @@ wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
 tar xf libssh2-1.8.0.tar.gz
 pushd libssh2-1.8.0
 ./configure --help
+time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no
+time make -j2
+time make install
 popd
-
-exit
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 wait
@@ -94,7 +95,7 @@ pwd
 if [ -e /tmp/config.cache ]; then
   time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
 else
-  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no ----with-libssh2=/tmp/libssh2-1.8.0
+  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no ----with-libssh2=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
 fi
