@@ -19,6 +19,7 @@ fi
 htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
 
 gcc -c -Q -march=native --help=target
-cat /proc/cpuinfo
+grep -c -e processor /proc/cpuinfo
+cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
