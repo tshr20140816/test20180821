@@ -78,7 +78,11 @@ pushd /tmp
 
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
 tar xf libssh2-1.8.0.tar.gz
-ls -lang
+pushd libssh2-1.8.0
+./configure --help
+popd
+
+exit
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 wait
