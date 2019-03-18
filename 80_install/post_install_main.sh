@@ -7,12 +7,14 @@ chmod 777 start_web.sh
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-export CFLAGS="-O2 -march=native -mtune=native"
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 export CXXFLAGS="$CFLAGS"
 export LDFLAGS="-fuse-ld=gold"
 
 gcc --version
 g++ -fuse-ld=gold -Wl,--version
+gcc -c -Q -march=native --help=target
+cat /proc/cpuinfo
 
 pushd /tmp
 wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz &
