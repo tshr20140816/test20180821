@@ -5,7 +5,8 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
-echo $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
+grep -c -e processor /proc/cpuinfo
+cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
 exit
 
