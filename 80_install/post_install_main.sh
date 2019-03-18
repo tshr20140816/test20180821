@@ -30,7 +30,7 @@ pushd /tmp
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
 if [ -e /tmp/usr/bin/aria2c ]; then
-  aria2c -x4 https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+  aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 else
   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 fi
@@ -98,8 +98,8 @@ pushd /tmp
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
 ls -lang
-mv bin /tmp/usr
-mv share /tmp/usr
+mv -f bin /tmp/usr
+mv -f share /tmp/usr
 popd
 ls -lang /tmp/usr/bin
 exit
