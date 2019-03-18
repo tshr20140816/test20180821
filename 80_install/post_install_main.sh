@@ -26,18 +26,6 @@ if [ -e aria2c ]; then
   mv aria2c /tmp/usr/bin
 fi
 
-pushd /tmp
-wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
-wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
-wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
-# if [ -e /tmp/usr/bin/aria2c ]; then
-#   aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
-# else
-#   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
-# fi
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
-popd
-
 if [ -e config.cache ]; then
   cp config.cache /tmp/
 fi
@@ -84,6 +72,11 @@ gcc --version
 ccache -s
 ccache -z
 
+pushd /tmp
+wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0.tar.xz &
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
+popd
+
 wait
 
 pushd /tmp
@@ -91,6 +84,30 @@ pushd /tmp
 time unzip -q ccache_cache.zip
 rm -f ccache_cache.zip
 popd
+
+pushd /tmp
+tar xf nghttp2-1.37.0.tar.xz
+pushd nghttp2-1.37.0
+./configure --help
+time ./configure --prefix=/tmp/usr
+popd
+popd
+
+exit
+
+pushd /tmp
+wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
+wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
+wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
+# if [ -e /tmp/usr/bin/aria2c ]; then
+#   aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+# else
+#   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+# fi
+# curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
+popd
+
+wait
 
 pushd /tmp
 
