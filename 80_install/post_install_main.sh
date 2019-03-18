@@ -27,7 +27,7 @@ if [ -e aria2c ]; then
 fi
 
 pushd /tmp
-# wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
+wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
 # if [ -e /tmp/usr/bin/aria2c ]; then
@@ -147,12 +147,13 @@ pwd
 if [ -e /tmp/config.cache ]; then
   time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
 else
-  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no --with-libssh2=/tmp/usr
+  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
 fi
 
-time timeout -sKILL 180 make -j$(grep -c -e processor /proc/cpuinfo)
+time timeout -sKILL 30 make -j$(grep -c -e processor /proc/cpuinfo)
 if [ $? != 0 ]; then
   echo 'time out'
   result='NG'
