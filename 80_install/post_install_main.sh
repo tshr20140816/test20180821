@@ -157,8 +157,8 @@ pushd out
 # time ../configure-cmake --prefix=/tmp/usr
 # time make -j2
 # time make install
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
-cmake --build . --config Release --target install
+CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
+CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
 popd
 popd
 
