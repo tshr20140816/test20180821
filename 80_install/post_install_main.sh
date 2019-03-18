@@ -19,10 +19,10 @@ grep -c -e processor /proc/cpuinfo
 cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
 pushd /tmp
-wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
+# wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
-wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+# wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 popd
 
 if [ -e config.cache ]; then
@@ -84,7 +84,9 @@ pushd /tmp
 # cmake
 
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
+pushd cmake-3.14.0-Linux-x86_64
 ls -lang
+popd
 
 exit
 
