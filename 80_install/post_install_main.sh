@@ -127,11 +127,8 @@ wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
-ls -lang bin
-ls -lang share
 cp -f bin/* /tmp/usr/bin/
 cp -rf share /tmp/usr
-ls -lang /tmp/usr
 popd
 
 # libssh2
@@ -172,7 +169,7 @@ cmake --build . --config Release --target install
 popd
 popd
 
-ls -lang /tmp/usr/bin
+ls -lang /tmp/usr/lib
 ldd /tmp/usr/bin/brotli
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
