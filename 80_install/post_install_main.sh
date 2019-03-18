@@ -87,9 +87,11 @@ popd
 
 wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
 tar xf v1.0.7.tar.gz
-ls -lang
-exit
+pushd brotli-1.0.7
+./configure --help
+popd
 
+exit
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 wait
 
