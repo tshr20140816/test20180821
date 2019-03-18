@@ -170,6 +170,10 @@ popd
 popd
 
 ls -lang /tmp/usr/lib
+rm -f /tmp/usr/lib/libbrotlicommon.so
+rm -f /tmp/usr/lib/libbrotlicommon.so.1
+rm -f /tmp/usr/lib/libbrotlicommon.so.1.0.7
+ls -lang /tmp/usr/lib
 ldd /tmp/usr/bin/brotli
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
