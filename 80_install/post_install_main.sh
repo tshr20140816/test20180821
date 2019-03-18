@@ -178,11 +178,12 @@ tar xf curl-7.64.0.tar.xz
 pushd curl-7.64.0
 pwd
 ./configure --help
+export LDFLAGS="-L/tmp/usr/lib -Wl,-rpath /tmp/usr/lib"
 if [ -e /tmp/config.cache ]; then
-  time LD_FLAGS="-L/tmp/usr/lib" ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
+  time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
 else
-  time LD_FLAGS="-L/tmp/usr/lib" ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
+  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
