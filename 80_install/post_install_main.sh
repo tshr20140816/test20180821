@@ -73,7 +73,7 @@ ccache -s
 ccache -z
 
 pushd /tmp
-wget https://github.com/google/brotli/archive/v1.0.5.tar.gz &
+wget https://github.com/google/brotli/archive/v1.0.4.tar.gz &
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0.tar.xz
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 popd
@@ -144,8 +144,8 @@ pushd /tmp
 # brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
-tar xf v1.0.5.tar.gz
-pushd brotli-1.0.5
+tar xf v1.0.4.tar.gz
+pushd brotli-1.0.4
 # cp -f /tmp/configure-cmake ./
 # chmod +x configure-cmake
 mkdir out
