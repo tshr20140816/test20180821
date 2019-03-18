@@ -30,12 +30,11 @@ pushd /tmp
 # wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
-if [ -e /tmp/usr/bin/aria2c ]; then
-  aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
-  # echo 'dummy'
-else
-  wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
-fi
+# if [ -e /tmp/usr/bin/aria2c ]; then
+#   aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+# else
+#   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+# fi
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
 popd
 
@@ -95,6 +94,8 @@ wait
 
 pushd /tmp
 
+wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+
 # cmake
 
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
@@ -115,6 +116,8 @@ time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-s
 time make -j2
 time make install
 popd
+
+wait
 
 # brotli
 
