@@ -31,7 +31,7 @@ pushd /tmp
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
 if [ -e /tmp/usr/bin/aria2c ]; then
-  aria2c -s6 -j6 -x6 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+  aria2c -s3 -j3 -x3 -k1M https://github.com/google/brotli/archive/v1.0.7.tar.gz &
   # echo 'dummy'
 else
   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
@@ -104,8 +104,8 @@ ls -lang share
 cp -f bin/* /tmp/usr/bin/
 mv share /tmp/usr
 popd
-ls -lang /tmp/usr/bin
-exit
+
+# libssh2
 
 # wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
 tar xf libssh2-1.8.0.tar.gz
@@ -115,6 +115,8 @@ time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-s
 time make -j2
 time make install
 popd
+
+# brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
 tar xf v1.0.7.tar.gz
