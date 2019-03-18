@@ -121,7 +121,7 @@ wait
 
 pushd /tmp
 
-wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+wget https://github.com/google/brotli/archive/v1.0.6.tar.gz &
 
 # cmake
 
@@ -151,8 +151,8 @@ pushd /tmp
 # brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
-tar xf v1.0.7.tar.gz
-pushd brotli-1.0.7
+tar xf v1.0.6.tar.gz
+pushd brotli-1.0.6
 # cp -f /tmp/configure-cmake ./
 # chmod +x configure-cmake
 mkdir out
