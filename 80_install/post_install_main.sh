@@ -85,6 +85,11 @@ time make -j2
 time make install
 popd
 
+wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
+tar xf v1.0.7.tar.gz
+ls -lang
+exit
+
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 wait
 
