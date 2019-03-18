@@ -18,11 +18,22 @@ gcc -c -Q -march=native --help=target
 grep -c -e processor /proc/cpuinfo
 cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
+mkdir -p /tmp/usr/bin
+
+if [ -e aria2c ]; then
+  chmod +x aria2c
+  mv aria2c /tmp/usr/bin
+fi
+
 pushd /tmp
 # wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
-wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+if [ -e /tmp/usr/bin/aria2c ]; then
+  aria2c -x4 https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+else
+  wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+fi
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
 popd
 
@@ -90,6 +101,8 @@ ls -lang
 mv bin /tmp/usr
 mv share /tmp/usr
 popd
+ls -lang /tmp/usr/bin
+exit
 
 # wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
 tar xf libssh2-1.8.0.tar.gz
