@@ -170,10 +170,6 @@ popd
 popd
 
 ls -lang /tmp/usr/lib
-rm -f /tmp/usr/lib/libbrotlicommon.so
-rm -f /tmp/usr/lib/libbrotlicommon.so.1
-rm -f /tmp/usr/lib/libbrotlicommon.so.1.0.7
-ls -lang /tmp/usr/lib
 ldd /tmp/usr/bin/brotli
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
@@ -183,10 +179,10 @@ pushd curl-7.64.0
 pwd
 ./configure --help
 if [ -e /tmp/config.cache ]; then
-  time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
+  time LD_FLAGS="-L/tmp/usr/lib" ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
 else
-  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
+  time LD_FLAGS="-L/tmp/usr/lib" ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
