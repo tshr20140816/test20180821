@@ -174,7 +174,7 @@ if [ -e /tmp/config.cache ]; then
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
 else
   time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
-    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
 fi
