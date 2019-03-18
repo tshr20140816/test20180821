@@ -99,7 +99,8 @@ pushd /tmp
 
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
-ls -lang
+ls -lang bin
+ls -lang share
 cp -rf bin/ /tmp/usr/bin/
 cp -rf share /tmp/usr/share
 popd
