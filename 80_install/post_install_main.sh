@@ -95,7 +95,7 @@ pwd
 if [ -e /tmp/config.cache ]; then
   time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
 else
-  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no ----with-libssh2=/tmp/usr
+  time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no ----with-libssh2=/tmp/usr/lib
   cat config.cache
   cp config.cache /tmp/
 fi
