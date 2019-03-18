@@ -144,14 +144,19 @@ time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-s
 time make -j2
 time make install
 popd
+popd
 
 wait
+cp configure-cmake /tmp/configure-cmake
+
+pushd /tmp
 
 # brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
 tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
+cp -f /tmp/configure-cmake ./
 mkdir out
 pushd out
 ../configure-cmake --help
@@ -160,9 +165,9 @@ pushd out
 # time make -j2
 # time make install
 ls -lang
-CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
 ls -lang
-CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
+cmake --build . --config Release --target install
 popd
 popd
 
