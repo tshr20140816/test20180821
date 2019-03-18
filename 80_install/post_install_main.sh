@@ -134,11 +134,9 @@ cmake --build . --config Release --target install
 popd
 popd
 
-ls -lang /tmp/usr
+ls -lang /tmp/usr/bin
 
-exit
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
-wait
 
 tar xf curl-7.64.0.tar.xz
 pushd curl-7.64.0
