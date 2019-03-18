@@ -154,11 +154,12 @@ tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
 mkdir out
 pushd out
-# time ../configure-cmake --prefix=/tmp/usr
-# time make -j2
-# time make install
-CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
-CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
+time ../configure-cmake --prefix=/tmp/usr --enable-static=yes --enable-shared=no
+ls -lang
+time make -j2
+time make install
+# CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
+# CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
 popd
 popd
 
