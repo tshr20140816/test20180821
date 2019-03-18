@@ -310,7 +310,7 @@ fi
 # Unlike CFLAGS/CXXFLAGS/CC/CXX, LDFLAGS isn't handled by CMake, so we
 # need to parse it here.
 if [ "x${LDFLAGS}" != "x" ]; then
-    for varname in EXE MODULE STATIC; do
+    for varname in STATIC; do
         CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_${varname}_LINKER_FLAGS=$(quote "$LDFLAGS")"
     done
 fi
