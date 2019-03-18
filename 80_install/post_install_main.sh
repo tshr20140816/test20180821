@@ -167,6 +167,7 @@ popd
 popd
 
 ls -lang /tmp/usr/bin
+ldd /tmp/usr/bin/brotli
 
 #wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 
