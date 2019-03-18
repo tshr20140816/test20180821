@@ -19,7 +19,7 @@ grep -c -e processor /proc/cpuinfo
 cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
 pushd /tmp
-wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz &
+wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 popd
 
 if [ -e config.cache ]; then
@@ -76,11 +76,11 @@ popd
 
 pushd /tmp
 
-#wget https://github.com/aria2/aria2/releases/download/release-1.34.0/aria2-1.34.0.tar.xz
+#wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
 wait
 
-tar xf aria2-1.34.0.tar.xz
-pushd aria2-1.34.0
+tar xf curl-7.64.0.tar.xz
+pushd curl-7.64.0
 pwd
 ./configure --help
 if [ -e /tmp/config.cache ]; then
@@ -108,7 +108,7 @@ ls -lang /tmp/usr/bin
 popd
 popd
 
-cp /tmp/usr/bin/aria2c www/
+cp /tmp/usr/bin/curl www/
 cp /tmp/config.cache www/
 
 pushd /tmp
