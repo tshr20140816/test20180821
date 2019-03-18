@@ -22,7 +22,8 @@ pushd /tmp
 # wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
-# wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
 popd
 
 if [ -e config.cache ]; then
@@ -72,7 +73,7 @@ ccache -s
 ccache -z
 
 pushd /tmp
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 time unzip -q ccache_cache.zip
 rm -f ccache_cache.zip
 popd
@@ -86,9 +87,9 @@ pushd /tmp
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
 ls -lang
+mv bin /tmp/usr
+mv share /tmp/usr
 popd
-
-exit
 
 # wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
 tar xf libssh2-1.8.0.tar.gz
