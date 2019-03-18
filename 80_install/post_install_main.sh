@@ -143,7 +143,8 @@ pushd curl-7.64.0
 pwd
 ./configure --help
 if [ -e /tmp/config.cache ]; then
-  time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no
+  time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
 else
   time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
