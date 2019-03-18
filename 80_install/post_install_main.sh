@@ -157,6 +157,7 @@ pushd /tmp
 tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
 cp -f /tmp/configure-cmake ./
+chmod +x configure-cmake
 mkdir out
 pushd out
 ../configure-cmake --help
