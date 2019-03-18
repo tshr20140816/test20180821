@@ -73,7 +73,7 @@ ccache -s
 ccache -z
 
 pushd /tmp
-wget https://github.com/google/brotli/archive/v1.0.4.tar.gz &
+wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0.tar.xz
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 popd
@@ -144,8 +144,8 @@ pushd /tmp
 # brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
-tar xf v1.0.4.tar.gz
-pushd brotli-1.0.4
+tar xf v1.0.7.tar.gz
+pushd brotli-1.0.7
 # cp -f /tmp/configure-cmake ./
 # chmod +x configure-cmake
 mkdir out
@@ -170,18 +170,19 @@ ldd /tmp/usr/bin/brotli
 tar xf curl-7.64.0.tar.xz
 pushd curl-7.64.0
 pwd
+export LD_LIBRARY_PATH=/tmp/usr/lib:${LD_LIBRARY_PATH}
 ./configure --help
 # export LDFLAGS="-fuse-ld=gold -L/tmp/usr/lib -Wl,-rpath /tmp/usr/lib"
 if [ -e /tmp/config.cache ]; then
-  # time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
-  #   --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
   time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
-    --with-libssh2=/tmp/usr --with-nghttp2=/tmp/usr
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
+  # time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
+  #   --with-libssh2=/tmp/usr --with-nghttp2=/tmp/usr
 else
-  # time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
-  #   --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
   time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
-    --with-libssh2=/tmp/usr --with-nghttp2=/tmp/usr
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
+  # time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
+  #   --with-libssh2=/tmp/usr --with-nghttp2=/tmp/usr
   cat config.cache
   cp config.cache /tmp/
 fi
