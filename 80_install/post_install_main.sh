@@ -171,7 +171,7 @@ pwd
 ./configure --help
 if [ -e /tmp/config.cache ]; then
   time ./configure --prefix=/tmp/usr CONFIG_SITE="/tmp/config.cache" --enable-static=yes --enable-shared=no \
-    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr
+    --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
 else
   time ./configure --prefix=/tmp/usr --config-cache --enable-static=yes --enable-shared=no \
     --with-libssh2=/tmp/usr --with-brotli=/tmp/usr --with-nghttp2=/tmp/usr
