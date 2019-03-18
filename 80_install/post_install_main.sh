@@ -19,6 +19,7 @@ grep -c -e processor /proc/cpuinfo
 cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
 mkdir -p /tmp/usr/bin
+mkdir -p /tmp/usr/share
 
 if [ -e aria2c ]; then
   chmod +x aria2c
@@ -98,8 +99,8 @@ pushd /tmp
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
 ls -lang
-mv -f bin /tmp/usr
-mv -f share /tmp/usr
+cp -rf bin/ /tmp/usr/bin/
+cp -rf share /tmp/usr/share
 popd
 ls -lang /tmp/usr/bin
 exit
