@@ -155,12 +155,14 @@ pushd brotli-1.0.7
 mkdir out
 pushd out
 ../configure-cmake --help
-time ../configure-cmake --prefix=/tmp/usr
+# time ../configure-cmake --prefix=/tmp/usr
+# ls -lang
+# time make -j2
+# time make install
 ls -lang
-time make -j2
-time make install
-# CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
-# CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
+CMAKE_CXX_FLAGS='-static' cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
+ls -lang
+CMAKE_CXX_FLAGS='-static' cmake --build . --config Release --target install
 popd
 popd
 
