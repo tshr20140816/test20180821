@@ -84,7 +84,7 @@ tar xf httpd-2.4.38.tar.bz2
 pushd httpd-2.4.38
 ls -lang
 ./configure --help
-./configure --prefix=/tmp/usr --enable-brotli --with-brotli=/tmp/usr
+./configure --prefix=/tmp/usr --enable-brotli --with-brotli=/tmp/usr --enable-mods-shared="few"
 time make -j2
 time make install
 popd
