@@ -224,6 +224,7 @@ cp /tmp/usr/bin/curl www/
 cp /tmp/config.cache www/
 
 pushd /tmp
+rm -f ccache_cache.tar.xz
 time tar Jcf ccache_cache.tar.xz ./ccache
 ls -lang ccache_cache.tar.xz
 popd
