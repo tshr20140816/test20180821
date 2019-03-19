@@ -117,8 +117,7 @@ popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     -H "Content-Type: application/x-compress" \
-    --data-binary \
-    -F "file=@/tmp/ccache_cache.tar.xz" \
+    --data-binary @/tmp/ccache_cache.tar.xz \
     ${WEBDAV_URL}
 rm -f /tmp/ccache_cache.tar.xz
 
@@ -237,8 +236,7 @@ popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     -H "Content-Type: application/x-compress" \
-    --data-binary \
-    -F "file=@/tmp/ccache_cache.tar.xz" \
+    --data-binary @/tmp/ccache_cache.tar.xz \
     ${WEBDAV_URL}
 ls -lang www/
 
