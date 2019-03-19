@@ -30,4 +30,4 @@ tar xf ccache_cache.tar.xz
 
 ls -lang
 
-tree ccache
+find ccache
