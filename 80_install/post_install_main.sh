@@ -26,7 +26,33 @@ mkdir -p /tmp/usr/share
 pushd /tmp
 wget wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz
+popd
 
+if [ -e ccache ]; then
+  mkdir -p /tmp/usr/bin
+  cp ccache /tmp/usr/bin/
+  chmod +x /tmp/usr/bin/ccache
+  
+  export CCACHE_DIR=/tmp/ccache
+
+  pushd /tmp/usr/bin
+  ln -s ccache gcc
+  ln -s ccache g++
+  ln -s ccache cc
+  ln -s ccache c++
+  popd
+  ccache -s
+  pushd /tmp
+  curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+  if [ -e ccache_cache.tar.xz ]; then
+    time tar xf ccache_cache.tar.xz
+    rm -f ccache_cache.tar.xz
+  fi
+  popd
+  ccache -z
+fi
+
+pushd /tmp
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
 pushd cmake-3.14.0-Linux-x86_64
 cp -f bin/* /tmp/usr/bin/
@@ -49,6 +75,16 @@ popd
 
 ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
+
+pushd /tmp
+rm -f ccache_cache.tar.xz
+time tar Jcf ccache_cache.tar.xz ./ccache
+popd
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
+  -H "Content-Type: application/x-compress" \
+  --data-binary @/tmp/ccache_cache.tar.xz \
+  ${WEBDAV_URL}
 
 echo ${start_date}
 date
