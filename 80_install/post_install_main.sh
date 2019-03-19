@@ -18,11 +18,11 @@ unzip -q ccache_cache.zip
 
 ls -lang
 
-tar Jcvf ccache_cache.tar.xz ./ccache_cache
+tar Jcvf ccache_cache.tar.xz ./ccache
 
 ls -lang
 
-rm -rf ./ccache_cache
+rm -rf ./ccache
 
 ls -lang
 
@@ -30,4 +30,4 @@ tar xf ccache_cache.tar.xz
 
 ls -lang
 
-tree ccache_cache
+tree ccache
