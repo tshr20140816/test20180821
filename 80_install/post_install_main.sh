@@ -92,6 +92,7 @@ popd
 
 ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
+ls -lang /tmp/usr/modules
 
 pushd /tmp
 rm -f ccache_cache.tar.xz
