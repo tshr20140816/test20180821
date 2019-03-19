@@ -100,6 +100,8 @@ ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
 ls -lang /tmp/usr/modules
 
+export LD_LIBRARY_PATH=/tmp/usr/lib:${LD_LIBRARY_PATH}
+
 ldd /tmp/usr/modules/mod_brotli.so
 
 pushd /tmp
