@@ -81,6 +81,9 @@ else
 fi
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0.tar.xz
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
+wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
+wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
 popd
 
 pushd /tmp
@@ -109,12 +112,6 @@ ccache -s
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
-pushd /tmp
-wget https://curl.haxx.se/download/curl-7.64.0.tar.xz
-wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz
-wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz
-popd
-
 wait
 
 pushd /tmp
@@ -142,7 +139,7 @@ popd
 popd
 
 wait
-cp configure-cmake /tmp/configure-cmake
+# cp configure-cmake /tmp/configure-cmake
 
 pushd /tmp
 
