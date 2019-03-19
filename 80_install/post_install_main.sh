@@ -228,6 +228,8 @@ ls -lang www/
 
 ccache -s
 
+curl --verbose https://www.youtube.com/ 1> /dev/null
+
 echo ${start_date}
 echo ${check_point_010_date}
 date
