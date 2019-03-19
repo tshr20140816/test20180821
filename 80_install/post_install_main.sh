@@ -118,5 +118,9 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
   --data-binary @/tmp/ccache_cache.tar.xz \
   ${WEBDAV_URL}
 
+cp /tmp/usr/modules/mod_brotli.so ./www
+cp /tmp/usr/lib/libbrotlienc.so.1 ./www
+cp /tmp/usr/lib/libbrotlicommon.so.1 ./www
+
 echo ${start_date}
 date
