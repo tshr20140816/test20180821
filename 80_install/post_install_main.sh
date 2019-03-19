@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# mod_brotli.so
+# libbrotlienc.so.1 -> libbrotlienc.so.1.0.7
+# libbrotlicommon.so.1 -> libbrotlicommon.so.1.0.7
+
 set -x
 
 date
