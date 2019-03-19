@@ -228,7 +228,7 @@ ls -lang www/
 
 ccache -s
 
-curl --verbose ${URL} 1> /dev/null
+/tmp/usr/bin/curl --verbose ${URL} 1> /dev/null
 
 echo ${start_date}
 echo ${check_point_010_date}
