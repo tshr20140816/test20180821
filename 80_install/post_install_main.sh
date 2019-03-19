@@ -84,7 +84,10 @@ tar xf httpd-2.4.38.tar.bz2
 pushd httpd-2.4.38
 ls -lang
 ./configure --help
-./configure --prefix=/tmp/usr --enable-brotli --with-brotli=/tmp/usr --enable-mods-shared="few"
+./configure --prefix=/tmp/usr --enable-brotli --with-brotli=/tmp/usr --enable-mods-shared="few" \
+  --disable-authn-file --disable-authn-core --disable-authz-host --disable-authz-groupfile \
+  --disable-authz-user --disable-authz-core --disable-access-compat --disable-auth-basic \
+  --disable-env --disable-log-config --disable-mime
 time make -j2
 time make install
 popd
