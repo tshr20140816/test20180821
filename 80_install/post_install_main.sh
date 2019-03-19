@@ -14,7 +14,8 @@ curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 
 ls -lang
 
-unzip -q ccache_cache.zip
+# unzip -q ccache_cache.zip
+tar xvf ccache_cache.zip
 
 ls -lang
 
@@ -28,6 +29,6 @@ ls -lang
 
 tar xf ccache_cache.tar.xz
 
-ls -lang
+ls -lang ccache
 
-find ccache
+# find ccache
