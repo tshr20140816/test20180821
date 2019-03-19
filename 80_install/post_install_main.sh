@@ -18,7 +18,8 @@ unzip -q ccache_cache.zip
 
 ls -lang
 
-tar Jcf ccache_cache.tar.xz ./ccache
+time tar Jcf ccache_cache.tar.xz ./ccache
+time zip -9qr ccache_cache.zip ./ccache
 
 ls -lang
 
