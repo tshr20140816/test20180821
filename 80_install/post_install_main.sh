@@ -82,6 +82,7 @@ ls -lang /tmp/usr/lib
 pushd /tmp
 tar xf 2.4.38.tar.gz
 pushd httpd-2.4.38
+ls -lang
 ./configure --help
 ./configure --prefix=/tmp/usr --with-brotli=/tmp/usr
 time make -j2
