@@ -83,6 +83,12 @@ wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 popd
 
+wait
+
+ls -lang /tmp
+
+exit
+
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 if [ -e ccache_cache.zip ]; then
