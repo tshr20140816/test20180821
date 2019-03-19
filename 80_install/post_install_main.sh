@@ -24,6 +24,7 @@ mkdir -p /tmp/usr/bin
 mkdir -p /tmp/usr/share
 
 pushd /tmp
+wget wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz
 
 tar xf cmake-3.14.0-Linux-x86_64.tar.gz
@@ -35,7 +36,7 @@ popd
 
 pushd /tmp
 
-wget wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
+# wget wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
 tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
 mkdir out
