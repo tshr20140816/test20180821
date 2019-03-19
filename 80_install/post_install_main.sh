@@ -87,7 +87,10 @@ ls -lang
 ./configure --prefix=/tmp/usr --enable-brotli --with-brotli=/tmp/usr --enable-mods-shared="few" \
   --disable-authn-file --disable-authn-core --disable-authz-host --disable-authz-groupfile \
   --disable-authz-user --disable-authz-core --disable-access-compat --disable-auth-basic \
-  --disable-env --disable-log-config --disable-mime
+  --disable-env --disable-log-config --disable-mime --disable-setenvif --disable-version \
+  --disable-headers --disable-status --disable-autoindex --disable-dir --disable-alias \
+  --disable-filter --disable-reqtimeout
+
 time make -j2
 time make install
 popd
