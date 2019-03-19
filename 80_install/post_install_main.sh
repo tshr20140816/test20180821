@@ -115,7 +115,9 @@ pushd /tmp
 time tar Jcf ccache_cache.tar.xz ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.tar.xz"
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} \
+    -F "file=@/tmp/ccache_cache.tar.xz" \
+    -H "Content-Type: application/x-compress"
 rm -f /tmp/ccache_cache.tar.xz
 
 wait
