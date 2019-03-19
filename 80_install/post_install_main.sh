@@ -83,12 +83,6 @@ wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 popd
 
-wait
-
-ls -lang /tmp
-
-exit
-
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 if [ -e ccache_cache.zip ]; then
@@ -155,6 +149,9 @@ pushd /tmp
 # brotli
 
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
+if [ -e brotli-1.0.7.tar.gz ]; then
+  mv brotli-1.0.7.tar.gz v1.0.7.tar.gz
+fi
 tar xf v1.0.7.tar.gz
 pushd brotli-1.0.7
 # cp -f /tmp/configure-cmake ./
@@ -234,5 +231,5 @@ ls -lang www/
 ccache -s
 
 echo ${start_date}
-echo $(check_point_010_date)
+echo ${check_point_010_date}
 date
