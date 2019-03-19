@@ -81,9 +81,16 @@ ls -lang /tmp/usr/lib
 
 pushd /tmp
 tar xf 2.4.38.tar.gz
-ls -lang
-
+pushd httpd-2.4.38
+./configure --help
+./configure --prefix=/tmp/usr --with-brotli=/tmp/usr
+time make -j2
+time make install
 popd
+popd
+
+ls -lang /tmp/usr/bin
+ls -lang /tmp/usr/lib
 
 pushd /tmp
 rm -f ccache_cache.tar.xz
