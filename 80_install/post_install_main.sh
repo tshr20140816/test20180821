@@ -76,12 +76,13 @@ pushd /tmp
 # wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 if [ -e /tmp/usr/bin/aria2c ]; then
   aria2c --console-log-level=info -x2 https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+  aria2c --console-log-level=info -x2 https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 else
   wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
+  wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 fi
 wget https://github.com/nghttp2/nghttp2/releases/download/v1.37.0/nghttp2-1.37.0.tar.xz
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz &
 wget https://curl.haxx.se/download/curl-7.64.0.tar.xz &
 wget https://www.libssh2.org/download/libssh2-1.8.0.tar.gz &
 popd
