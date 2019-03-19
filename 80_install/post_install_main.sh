@@ -80,6 +80,12 @@ ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
 
 pushd /tmp
+tar xf 2.4.38.tar.gz
+ls -lang
+
+popd
+
+pushd /tmp
 rm -f ccache_cache.tar.xz
 time tar Jcf ccache_cache.tar.xz ./ccache
 popd
