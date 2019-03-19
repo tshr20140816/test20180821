@@ -236,7 +236,7 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} \
     -H "Content-Type: application/x-compress" \
     -F "file=@/tmp/ccache_cache.tar.xz"
-cat /tmp/ccache_cache.tar.xz
+cat /tmp/ccache_cache.tar.xz | head -n 3
 ls -lang www/
 
 ccache -s
