@@ -46,5 +46,7 @@ cmake --build . --config Release --target install
 popd
 popd
 
+find /tmp/usr
+
 echo ${start_date}
 date
