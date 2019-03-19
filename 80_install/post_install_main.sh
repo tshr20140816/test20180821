@@ -45,3 +45,6 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
 cmake --build . --config Release --target install
 popd
 popd
+
+echo ${start_date}
+date
