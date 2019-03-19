@@ -60,6 +60,8 @@ cp -rf share /tmp/usr
 popd
 popd
 
+wait
+
 pushd /tmp
 
 # wget wget https://github.com/google/brotli/archive/v1.0.7.tar.gz
