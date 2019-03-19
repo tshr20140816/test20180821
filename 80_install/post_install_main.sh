@@ -100,6 +100,8 @@ ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
 ls -lang /tmp/usr/modules
 
+ldd /tmp/usr/modules/mod_brotli.so
+
 pushd /tmp
 rm -f ccache_cache.tar.xz
 time tar Jcf ccache_cache.tar.xz ./ccache
