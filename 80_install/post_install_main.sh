@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -x
 
 date
@@ -89,9 +91,9 @@ popd
 
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-if [ -e ccache_cache.zip ]; then
-  time unzip -q ccache_cache.zip
-  rm -f ccache_cache.zip
+if [ -e ccache_cache.tar.xz ]; then
+  time tar xf ccache_cache.tar.xz
+  rm -f ccache_cache.tar.xz
 fi
 popd
 
@@ -107,11 +109,11 @@ popd
 
 ccache -s
 
-# pushd /tmp
-# zip -9qr ccache_cache.zip ./ccache
-# popd
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+pushd /tmp
+time tar Jcf ccache_cache.tar.xz ./ccache
+popd
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F 'file=@/tmp/ccache_cache.tar.xz'
 
 wait
 
@@ -219,10 +221,10 @@ cp /tmp/usr/bin/curl www/
 cp /tmp/config.cache www/
 
 pushd /tmp
-zip -9qr ccache_cache.zip ./ccache
+time tar Jcf ccache_cache.tar.xz ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F 'file=@/tmp/ccache_cache.tar.xz'
 
 ls -lang www/
 
