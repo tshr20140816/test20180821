@@ -79,6 +79,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/tmp/usr ..
 cmake --build . --config Release --target install
 popd
 popd
+popd
 
 ls -lang /tmp/usr/bin
 ls -lang /tmp/usr/lib
