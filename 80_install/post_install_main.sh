@@ -30,7 +30,8 @@ mkdir -p /tmp/usr/share
 pushd /tmp
 wget https://github.com/google/brotli/archive/v1.0.7.tar.gz &
 wget http://ftp.jaist.ac.jp/pub/apache//httpd/httpd-2.4.38.tar.bz2 &
-wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz
+# wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.0-Linux-x86_64.tar.gz
+wget https://github.com/Kitware/CMake/releases/download/v3.14.0/cmake-3.14.1-Linux-x86_64.tar.gz
 popd
 
 if [ -e ccache ]; then
@@ -58,8 +59,8 @@ if [ -e ccache ]; then
 fi
 
 pushd /tmp
-tar xf cmake-3.14.0-Linux-x86_64.tar.gz
-pushd cmake-3.14.0-Linux-x86_64
+tar xf cmake-3.14.1-Linux-x86_64.tar.gz
+pushd cmake-3.14.1-Linux-x86_64
 cp -f bin/* /tmp/usr/bin/
 cp -rf share /tmp/usr
 popd
