@@ -29,6 +29,9 @@ tar xf unrarsrc-5.7.1.tar.gz
 ls -lang
 cd unrar
 ls -lang
+cat makefile
+make -f makefile
+ls -lang
 popd
 
 echo ${start_date}
