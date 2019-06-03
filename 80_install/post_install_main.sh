@@ -32,11 +32,10 @@ ls -lang
 cat makefile
 time make -j2 -f makefile
 ls -lang
-pushd unrar
-ls -lang
 popd
 popd
-popd
+
+cp /tmp/unrar/unrar ./www
 
 echo ${start_date}
 date
