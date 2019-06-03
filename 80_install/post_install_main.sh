@@ -30,7 +30,7 @@ ls -lang
 cd unrar
 ls -lang
 cat makefile
-make -f makefile
+time make -j2 -f makefile
 ls -lang
 popd
 
