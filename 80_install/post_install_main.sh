@@ -27,6 +27,8 @@ pushd /tmp
 wget https://www.rarlab.com/rar/unrarsrc-5.7.1.tar.gz
 tar xf unrarsrc-5.7.1.tar.gz
 ls -lang
+cd unrar
+ls -lang
 popd
 
 echo ${start_date}
