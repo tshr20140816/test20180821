@@ -27,11 +27,15 @@ pushd /tmp
 wget https://www.rarlab.com/rar/unrarsrc-5.7.1.tar.gz
 tar xf unrarsrc-5.7.1.tar.gz
 ls -lang
-cd unrar
+pushd unrar
 ls -lang
 cat makefile
 time make -j2 -f makefile
 ls -lang
+pushd unrar
+ls -lang
+popd
+popd
 popd
 
 echo ${start_date}
