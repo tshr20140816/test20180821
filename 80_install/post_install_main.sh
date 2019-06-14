@@ -23,9 +23,10 @@ cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e proce
 mkdir -p /tmp/usr/bin
 mkdir -p /tmp/usr/share
 
+cd /tmp
+
 wget https://curl.haxx.se/download/curl-7.65.1.tar.xz
 
-cd /tmp
 tar xf curl-7.65.1.tar.xz
 ls -lang
 cd curl
