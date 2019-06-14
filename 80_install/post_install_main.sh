@@ -32,6 +32,9 @@ tar xf curl-7.65.1.tar.xz
 cd curl-7.65.1
 ls -lang
 ./configure --help
+time ./configure --prefix=/tmp/usr
+time make -j2
+time make install
 
 echo ${start_date}
 date
