@@ -28,8 +28,9 @@ cd /tmp
 wget https://curl.haxx.se/download/curl-7.65.1.tar.xz
 
 tar xf curl-7.65.1.tar.xz
+# ls -lang
+cd curl-7.65.1
 ls -lang
-cd curl
 ./configure --help
 
 echo ${start_date}
