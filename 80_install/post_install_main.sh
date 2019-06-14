@@ -32,7 +32,7 @@ tar xf curl-7.65.1.tar.xz
 cd curl-7.65.1
 ls -lang
 ./configure --help
-time ./configure --prefix=/tmp/usr
+time ./configure --prefix=/tmp/usr --enable-shared=no
 time make -j2
 time make install
 
