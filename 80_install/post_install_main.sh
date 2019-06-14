@@ -36,5 +36,7 @@ time ./configure --prefix=/tmp/usr --enable-shared=no
 time make -j2
 time make install
 
+/tmp/usr/bin/curl --version
+
 echo ${start_date}
 date
