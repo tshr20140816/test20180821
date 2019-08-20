@@ -39,8 +39,8 @@ pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
 # ls -lang
-# time tar xf ccache_cache.tar.xz
-# rm -f ccache_cache.tar.xz
+# time tar xf ccache_cache.tar.bz2
+# rm -f ccache_cache.tar.bz2
 popd
 
 pushd /tmp
@@ -58,8 +58,8 @@ else
 fi
 
 pushd /tmp
-time tar xf ccache_cache.tar.xz
-rm -f ccache_cache.tar.xz
+time tar xf ccache_cache.tar.bz2
+rm -f ccache_cache.tar.bz2
 popd
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
@@ -74,14 +74,14 @@ ccache -s
 wc -l /tmp/make_results.txt
 
 pushd /tmp
-rm -f ccache_cache.tar.xz
-time tar Jcf ccache_cache.tar.xz ./ccache
+rm -f ccache_cache.tar.bz2
+time tar jcf ccache_cache.tar.bz2 ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
-#     -H "Content-Type: application/x-compress" \
-#     --data-binary @/tmp/ccache_cache.tar.xz \
-#     ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
+    -H "Content-Type: application/x-compress" \
+    --data-binary @/tmp/ccache_cache.tar.bz2 \
+    ${WEBDAV_URL}
 
 ccache -s
 
