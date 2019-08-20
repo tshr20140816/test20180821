@@ -5,7 +5,7 @@ set -x
 date
 start_date=$(date)
 
-git --version
+cat /proc/cpuinfo
 
 export PATH="/tmp/usr/bin:${PATH}"
 
