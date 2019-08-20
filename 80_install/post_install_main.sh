@@ -63,7 +63,7 @@ rm -f ccache_cache.tar.bz2
 popd
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 60 make | tee /tmp/make_results.txt
+time timeout -sKILL 90 make | tee /tmp/make_results.txt
 popd
 popd
 
