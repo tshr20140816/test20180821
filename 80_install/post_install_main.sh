@@ -40,10 +40,11 @@ ccache -z
 
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 # ls -lang
 # time tar xf ccache_cache.tar.bz2
 # rm -f ccache_cache.tar.bz2
+tar xf ccache_cache.tar.bz2 &
 popd
 
 pushd /tmp
@@ -60,11 +61,7 @@ else
   cp config.cache /tmp/
 fi
 
-pushd /tmp
-time tar xf ccache_cache.tar.bz2
-# time tar -I pbzip2 xf ccache_cache.tar.bz2
-rm -f ccache_cache.tar.bz2
-popd
+wait
 
 ccache -s
 
