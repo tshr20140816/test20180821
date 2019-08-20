@@ -19,6 +19,10 @@ mkdir -p /tmp/usr/bin
 cp ccache /tmp/usr/bin/
 chmod +x /tmp/usr/bin/ccache
 
+if [ -e config.cache ]; then
+  cp config.cache /tmp/
+fi
+
 export CCACHE_DIR=/tmp/ccache
 
 pushd /tmp/usr/bin
