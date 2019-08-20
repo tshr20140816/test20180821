@@ -44,7 +44,7 @@ pushd MEGAcmd
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
-time timeout -sKILL 120 make -j2
+time timeout -sKILL 120 make -j2 | tee /tmp/make_results.txt
 popd
 popd
 
@@ -59,6 +59,8 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     ${WEBDAV_URL}
 
 ccache -s
+
+wc -l /tmp/make_results.txt
 
 echo ${start_date}
 date
