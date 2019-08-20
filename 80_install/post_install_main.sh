@@ -81,8 +81,8 @@ wc -l /tmp/make_results.txt
 
 pushd /tmp
 rm -f ccache_cache.tar.bz2
-tar -I pbzip2 cf ccache_cache.tar.bz2 ./ccache
-ls -lang ccache_cache.tar.bz2
+# tar -I pbzip2 cf ccache_cache.tar.bz2 ./ccache
+# ls -lang ccache_cache.tar.bz2
 if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
   time tar jcf ccache_cache.tar.bz2 ./ccache
   ls -lang ccache_cache.tar.bz2
@@ -95,6 +95,11 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     ${WEBDAV_URL}
 
 ccache -s
+
+pushd /tmp 
+  time tar cf test.tar ./ccache
+  ls -lang
+popd
 
 echo ${start_date}
 date
