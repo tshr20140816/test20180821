@@ -43,11 +43,17 @@ pushd MEGAcmd
 # time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
-time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
+if [ -e /tmp/config.cache ]; then
+  time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no CONFIG_SITE="/tmp/config.cache"
+else
+  time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no --config-cache
+  cp config.cache /tmp/
+fi
 time timeout -sKILL 120 make -j2 | tee /tmp/make_results.txt
 popd
 popd
 
+cp /tmp/config.cache www/
 wc -l /tmp/make_results.txt
 
 pushd /tmp
