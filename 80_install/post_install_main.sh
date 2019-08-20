@@ -76,6 +76,7 @@ wc -l /tmp/make_results.txt
 pushd /tmp
 rm -f ccache_cache.tar.bz2
 time tar jcf ccache_cache.tar.bz2 ./ccache
+ls -lang ccache_cache.tar.bz2
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
