@@ -48,6 +48,8 @@ time timeout -sKILL 120 make -j2 | tee /tmp/make_results.txt
 popd
 popd
 
+wc -l /tmp/make_results.txt
+
 pushd /tmp
 rm -f ccache_cache.tar.xz
 time tar Jcf ccache_cache.tar.xz ./ccache
@@ -59,8 +61,6 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     ${WEBDAV_URL}
 
 ccache -s
-
-wc -l /tmp/make_results.txt
 
 echo ${start_date}
 date
