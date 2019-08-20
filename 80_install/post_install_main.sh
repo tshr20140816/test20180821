@@ -38,7 +38,7 @@ popd
 
 pushd /tmp
 # git clone https://github.com/meganz/MEGAcmd.git
-git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
+time git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
 pushd MEGAcmd
 # time git submodule update --init --recursive --depth=1
 time sh autogen.sh
