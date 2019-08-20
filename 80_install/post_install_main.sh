@@ -24,8 +24,17 @@ ln -s ccache cc
 ln -s ccache c++
 popd
 
+ccache -s
+ccache -z
+
 pushd /tmp
-time git clone https://github.com/meganz/MEGAcmd.git
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+time unzip -q ccache_cache.zip
+rm -f ccache_cache.zip
+popd
+
+pushd /tmp
+git clone https://github.com/meganz/MEGAcmd.git
 pushd MEGAcmd
 time git submodule update --init --recursive
 time sh autogen.sh
