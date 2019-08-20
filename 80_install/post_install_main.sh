@@ -34,7 +34,7 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 ls -lang
 # time unzip -q ccache_cache.zip
 # tar xf ccache_cache.zip
-# rm -f ccache_cache.zip
+rm -f ccache_cache.zip
 popd
 
 pushd /tmp
@@ -56,7 +56,7 @@ zip --help
 zip -r ccache_cache.zip ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT ${WEBDAV_URL} -F "file=@/tmp/ccache_cache.zip"
 
 ccache -s
 
