@@ -38,9 +38,10 @@ ls -lang
 popd
 
 pushd /tmp
-git clone https://github.com/meganz/MEGAcmd.git
+# git clone https://github.com/meganz/MEGAcmd.git
+git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
 pushd MEGAcmd
-time git submodule update --init --recursive --depth=1
+# time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
