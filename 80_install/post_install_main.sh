@@ -5,6 +5,8 @@ set -x
 date
 start_date=$(date)
 
+chmod 777 start_web.sh
+
 cat /proc/cpuinfo
 
 export PATH="/tmp/usr/bin:${PATH}"
