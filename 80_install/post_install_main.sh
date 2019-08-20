@@ -36,10 +36,11 @@ ccache -s
 ccache -z
 
 pushd /tmp
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-ls -lang
-time tar xf ccache_cache.tar.xz
-rm -f ccache_cache.tar.xz
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O &
+# ls -lang
+# time tar xf ccache_cache.tar.xz
+# rm -f ccache_cache.tar.xz
 popd
 
 pushd /tmp
@@ -55,6 +56,12 @@ else
   time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no --config-cache
   cp config.cache /tmp/
 fi
+
+pushd /tmp
+time tar xf ccache_cache.tar.xz
+rm -f ccache_cache.tar.xz
+popd
+
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 90 make | tee /tmp/make_results.txt
 popd
