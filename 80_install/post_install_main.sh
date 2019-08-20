@@ -44,11 +44,13 @@ time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
-time timeout -sKILL 120 make -j2
+time timeout -sKILL 30 make -j2
 popd
 popd
 
 pushd /tmp
+ls -lang
+zip --help
 zip -9qr ccache_cache.zip ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
