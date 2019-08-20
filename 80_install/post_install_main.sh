@@ -44,7 +44,7 @@ pushd MEGAcmd
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
-time timeout -sKILL 30 make -j2
+time timeout -sKILL 120 make -j2
 popd
 popd
 
