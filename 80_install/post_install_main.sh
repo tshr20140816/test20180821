@@ -63,7 +63,7 @@ rm -f ccache_cache.tar.xz
 popd
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 90 make | tee /tmp/make_results.txt
+time timeout -sKILL 10 make | tee /tmp/make_results.txt
 popd
 popd
 
@@ -78,10 +78,10 @@ rm -f ccache_cache.tar.xz
 time tar Jcf ccache_cache.tar.xz ./ccache
 popd
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
-    -H "Content-Type: application/x-compress" \
-    --data-binary @/tmp/ccache_cache.tar.xz \
-    ${WEBDAV_URL}
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
+#     -H "Content-Type: application/x-compress" \
+#     --data-binary @/tmp/ccache_cache.tar.xz \
+#     ${WEBDAV_URL}
 
 ccache -s
 
