@@ -58,7 +58,8 @@ else
 fi
 
 pushd /tmp
-time tar xf ccache_cache.tar.bz2
+# time tar xf ccache_cache.tar.bz2
+time tar -I pbzip2 xf ccache_cache.tar.bz2
 rm -f ccache_cache.tar.bz2
 popd
 
