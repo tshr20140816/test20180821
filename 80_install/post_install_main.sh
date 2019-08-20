@@ -5,6 +5,8 @@ set -x
 date
 start_date=$(date)
 
+pbzip2 --version
+
 chmod 777 start_web.sh
 
 cat /proc/cpuinfo
