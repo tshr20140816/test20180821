@@ -5,6 +5,8 @@ set -x
 date
 start_date=$(date)
 
+git --version
+
 export PATH="/tmp/usr/bin:${PATH}"
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
@@ -36,7 +38,7 @@ popd
 pushd /tmp
 git clone https://github.com/meganz/MEGAcmd.git
 pushd MEGAcmd
-time git submodule update --init --recursive
+time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
