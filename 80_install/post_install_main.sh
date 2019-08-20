@@ -32,7 +32,8 @@ ccache -z
 pushd /tmp
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 ls -lang
-
+# time tar xf ccache_cache.tar.xz
+rm -f ccache_cache.tar.xz
 popd
 
 pushd /tmp
