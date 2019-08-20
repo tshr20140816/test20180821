@@ -7,9 +7,9 @@ start_date=$(date)
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
-export CXXFLAGS="$CFLAGS"
-export LDFLAGS="-fuse-ld=gold"
+# export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+# export CXXFLAGS="$CFLAGS"
+# export LDFLAGS="-fuse-ld=gold"
 
 mkdir -p /tmp/usr/bin
 cp ccache /tmp/usr/bin/
