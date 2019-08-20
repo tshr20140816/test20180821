@@ -31,8 +31,10 @@ ccache -z
 
 pushd /tmp
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-time unzip -q ccache_cache.zip
-rm -f ccache_cache.zip
+ls -lang
+# time unzip -q ccache_cache.zip
+# tar xf ccache_cache.zip
+# rm -f ccache_cache.zip
 popd
 
 pushd /tmp
@@ -42,7 +44,7 @@ time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
-time timeout -sKILL 180 make -j2
+time timeout -sKILL 120 make -j2
 popd
 popd
 
