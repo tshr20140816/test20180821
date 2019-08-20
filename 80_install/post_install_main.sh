@@ -99,6 +99,8 @@ ccache -s
 pushd /tmp 
   time tar cf test.tar ./ccache
   ls -lang
+  time pbzip2 test.tar
+  ls -lang
 popd
 
 echo ${start_date}
