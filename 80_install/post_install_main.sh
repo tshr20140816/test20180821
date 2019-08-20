@@ -55,7 +55,8 @@ else
   time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no --config-cache
   cp config.cache /tmp/
 fi
-time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
+# time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
+time timeout -sKILL 90 make | tee /tmp/make_results.txt
 popd
 popd
 
