@@ -76,7 +76,7 @@ wc -l /tmp/make_results.txt
 pushd /tmp
 rm -f ccache_cache.tar.bz2
 # time tar jcf ccache_cache.tar.bz2 ./ccache
-time tar jcf ccache_cache.tar.bz2 --use-compress-program=pbzip2 ./ccache
+tar -I pbzip2 cf ccache_cache.tar.bz2 ./ccache
 ls -lang ccache_cache.tar.bz2
 if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
   time tar jcf ccache_cache.tar.bz2 ./ccache
