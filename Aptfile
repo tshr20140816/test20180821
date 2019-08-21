@@ -12,9 +12,6 @@
 pbzip2
 
 # -- ccache --
-libzstd-dev
-libb2-dev
-gperf
-# asciidoc
-# docbook-xsl
-# xsltproc
+# libzstd-dev
+# libb2-dev
+# gperf
