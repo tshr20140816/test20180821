@@ -5,6 +5,8 @@ set -x
 date
 start_date=$(date)
 
+ccache --version
+
 pbzip2 --version
 pbzip2 --help
 
