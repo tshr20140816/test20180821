@@ -96,5 +96,11 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
 
 ccache -s
 
+pushd /tmp
+time tar cf test.tar ./ccache
+time pbzip2 -p2 test.tar
+ls -lang
+popd
+
 echo ${start_date}
 date
