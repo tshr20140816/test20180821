@@ -19,6 +19,11 @@ cd ccache
 time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
+time make -j2
+time make install
+
+ls -lang /tmp/usr
+ls -lang /tmp/usr/bin
 
 echo ${start_date}
 date
