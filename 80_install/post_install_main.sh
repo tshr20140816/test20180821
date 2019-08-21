@@ -27,7 +27,8 @@ export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
 export CCACHE_SLOPPINESS=pch_defines,time_macros,file_macro,locale
 export CCACHE_NOHASHDIR=true
-export CCACHE_DEBUG=true
+# export CCACHE_DEBUG=true
+export CCACHE_DEPEND=true
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
