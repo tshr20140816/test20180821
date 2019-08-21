@@ -66,8 +66,8 @@ wait
 
 ccache -s
 
-# time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 120 make | tee /tmp/make_results.txt
+time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
+# time timeout -sKILL 120 make | tee /tmp/make_results.txt
 popd
 popd
 
@@ -80,7 +80,9 @@ wc -l /tmp/make_results.txt
 pushd /tmp
 rm -f ccache_cache.tar.bz2
 # tar -I pbzip2 cf ccache_cache.tar.bz2 ./ccache
-# ls -lang ccache_cache.tar.bz2
+time tar cf ccache_cache.tar ./ccache
+time pbzip2 -p2 --fast ccache_cache.tar
+ls -lang ccache_cache.tar.bz2
 if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
   time tar jcf ccache_cache.tar.bz2 ./ccache
   ls -lang ccache_cache.tar.bz2
@@ -93,12 +95,6 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     ${WEBDAV_URL}
 
 ccache -s
-
-pushd /tmp
-time tar cf test.tar ./ccache
-time pbzip2 -p2 --fast test.tar
-ls -lang
-popd
 
 echo ${start_date}
 date
