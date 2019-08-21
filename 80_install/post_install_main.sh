@@ -22,7 +22,7 @@ cp ccache /tmp/usr/bin/
 chmod +x /tmp/usr/bin/ccache
 
 export CCACHE_DIR=/tmp/ccache
-# export CCACHE_COMPILERCHECK=content
+export CCACHE_COMPILERCHECK=content
 # export CCACHE_COMPILERCHECK=none
 
 pushd /tmp/usr/bin
