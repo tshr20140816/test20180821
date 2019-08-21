@@ -20,6 +20,7 @@ time sh autogen.sh
 ./configure --help
 time ./configure --prefix=/tmp/usr
 time make -j2
+ls -lang
 time make install
 
 ls -lang /tmp/usr
