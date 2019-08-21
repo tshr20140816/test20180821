@@ -98,7 +98,7 @@ ccache -s
 
 pushd /tmp
 time tar cf test.tar ./ccache
-time pbzip2 -p2 test.tar
+time pbzip2 -p2 --fast test.tar
 ls -lang
 popd
 
