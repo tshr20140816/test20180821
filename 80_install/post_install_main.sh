@@ -19,6 +19,7 @@ export PATH="/tmp/usr/bin:${PATH}"
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
 # export LDFLAGS="-fuse-ld=gold"
+export CCACHE_COMPILERCHECK=content
 
 mkdir -p /tmp/usr/bin
 cp ccache /tmp/usr/bin/
@@ -46,7 +47,7 @@ curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 # ls -lang
 # time tar xf ccache_cache.tar.bz2
 # rm -f ccache_cache.tar.bz2
-tar xf ccache_cache.tar.bz2 &
+# tar xf ccache_cache.tar.bz2 &
 popd
 
 pushd /tmp
@@ -68,7 +69,7 @@ wait
 ccache -s
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 180 make -j4 | tee /tmp/make_results.txt
+time timeout -sKILL 60 make | tee /tmp/make_results.txt
 popd
 popd
 
