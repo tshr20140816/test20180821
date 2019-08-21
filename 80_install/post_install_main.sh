@@ -16,7 +16,6 @@ export PATH="/tmp/usr/bin:${PATH}"
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
 # export LDFLAGS="-fuse-ld=gold"
-export CCACHE_COMPILERCHECK=content
 
 mkdir -p /tmp/usr/bin
 cp ccache /tmp/usr/bin/
@@ -27,6 +26,7 @@ if [ -e config.cache ]; then
 fi
 
 export CCACHE_DIR=/tmp/ccache
+export CCACHE_COMPILERCHECK=content
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
