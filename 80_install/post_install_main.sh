@@ -7,9 +7,13 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
+export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+export CXXFLAGS="$CFLAGS"
+export LDFLAGS="-fuse-ld=gold"
+
 cd /tmp
 
-time git clone --depth=1 https://github.com/ccache/ccache.git
+time git clone -b v3.7.3 --depth=1 https://github.com/ccache/ccache.git
 
 cd ccache
 time sh autogen.sh
