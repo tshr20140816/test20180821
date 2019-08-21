@@ -82,7 +82,7 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
 
 ccache -s
 
-cat /tmp/ccache.log
+# cat /tmp/ccache.log
 
 echo ${start_date}
 date
