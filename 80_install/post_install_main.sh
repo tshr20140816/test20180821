@@ -63,6 +63,7 @@ ccache --version
 ccache -s
 ccache -z
 ccache -p
+dir -R ${CCACHE_DIR}
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 120 make | tee /tmp/make_results.txt
