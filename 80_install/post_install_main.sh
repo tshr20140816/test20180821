@@ -68,7 +68,7 @@ wait
 ccache -s
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 60 make | tee /tmp/make_results.txt
+time timeout -sKILL 120 make | tee /tmp/make_results.txt
 popd
 popd
 
