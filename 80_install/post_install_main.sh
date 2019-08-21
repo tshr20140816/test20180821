@@ -36,8 +36,7 @@ ln -s ccache c++
 popd
 
 pushd /tmp
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 # ls -lang
 # time tar xf ccache_cache.tar.bz2
 # rm -f ccache_cache.tar.bz2
