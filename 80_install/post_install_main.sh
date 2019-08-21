@@ -26,7 +26,8 @@ if [ -e config.cache ]; then
 fi
 
 export CCACHE_DIR=/tmp/ccache
-export CCACHE_COMPILERCHECK=content
+# export CCACHE_COMPILERCHECK=content
+export CCACHE_COMPILERCHECK=none
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
