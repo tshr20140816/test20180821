@@ -27,7 +27,7 @@ export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
 export CCACHE_SLOPPINESS=pch_defines,time_macros,file_macro,locale
 export CCACHE_NOHASHDIR=true
-# export CCACHE_DEBUG=true
+export CCACHE_DEBUG=true
 export CCACHE_DEPEND=true
 
 pushd /tmp/usr/bin
@@ -53,6 +53,7 @@ ccache -p
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 30 make | tee /tmp/make_results.txt
+ls -lang
 popd
 popd
 
