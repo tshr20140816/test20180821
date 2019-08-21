@@ -27,7 +27,7 @@ fi
 
 export CCACHE_DIR=/tmp/ccache
 # export CCACHE_COMPILERCHECK=content
-export CCACHE_COMPILERCHECK=none
+# export CCACHE_COMPILERCHECK=none
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
@@ -37,18 +37,14 @@ ln -s ccache c++
 popd
 
 pushd /tmp
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
-# ls -lang
-# time tar xf ccache_cache.tar.bz2
-# rm -f ccache_cache.tar.bz2
-tar xf ccache_cache.tar.bz2 &
-popd
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -O ${WEBDAV_URL}ccache_cache.tar.bz2 ${WEBDAV_URL}MEGAcmd.tar.bz2
+# tar xf ccache_cache.tar.bz2 &
+ls -lang
 
-pushd /tmp
-# git clone https://github.com/meganz/MEGAcmd.git
-time git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
+# time git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL}MEGAcmd.tar.bz2 -O
+tar xf MEGAcmd.tar.bz2
 pushd MEGAcmd
-# time git submodule update --init --recursive --depth=1
 time sh autogen.sh
 ./configure --help
 if [ -e /tmp/config.cache ]; then
@@ -88,11 +84,11 @@ if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
   ls -lang ccache_cache.tar.bz2
 fi
 popd
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}ccache_cache.tar.bz2
 time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     -H "Content-Type: application/x-compress" \
     --data-binary @/tmp/ccache_cache.tar.bz2 \
-    ${WEBDAV_URL}
+    ${WEBDAV_URL}ccache_cache.tar.bz2
 
 ccache -s
 
