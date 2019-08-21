@@ -25,6 +25,7 @@ export CCACHE_DIR=/tmp/ccache
 # export CCACHE_COMPILERCHECK=content
 export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
+export CCACHE_SLOPPINESS=pch_defines,time_macros
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
