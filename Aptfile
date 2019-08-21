@@ -17,3 +17,4 @@ libb2-dev
 gperf
 asciidoc
 docbook-xsl
+xsltproc
