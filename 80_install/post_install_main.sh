@@ -35,10 +35,6 @@ ln -s ccache cc
 ln -s ccache c++
 popd
 
-ccache -s
-ccache -z
-ccache --version
-
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
 curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
@@ -64,10 +60,13 @@ fi
 
 wait
 
+ccache --version
 ccache -s
+ccache -z
+ccache -p
 
-time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-# time timeout -sKILL 120 make | tee /tmp/make_results.txt
+# time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
+time timeout -sKILL 120 make | tee /tmp/make_results.txt
 popd
 popd
 
