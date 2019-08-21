@@ -9,3 +9,5 @@ libsodium-dev
 libc-ares-dev
 libfreeimage-dev
 pbzip2
+# ccache
+libzstd-dev
