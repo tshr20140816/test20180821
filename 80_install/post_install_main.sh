@@ -13,8 +13,6 @@ cat /proc/cpuinfo
 
 export PATH="/tmp/usr/bin:${PATH}"
 
-ccache --version
-
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
 # export LDFLAGS="-fuse-ld=gold"
@@ -39,6 +37,7 @@ popd
 
 ccache -s
 ccache -z
+ccache --version
 
 pushd /tmp
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} ${WEBDAV_URL} -O
