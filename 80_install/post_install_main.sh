@@ -53,7 +53,9 @@ ccache -p
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 30 make | tee /tmp/make_results.txt
-ls -lang /tmp/MEGAcmd/sdk/src
+# ls -lang /tmp/MEGAcmd/sdk/src
+cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-input-text
+cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-log
 popd
 popd
 
