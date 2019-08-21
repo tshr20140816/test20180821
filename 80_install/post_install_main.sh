@@ -53,7 +53,7 @@ ccache -p
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 30 make | tee /tmp/make_results.txt
-ls -lang src/
+ls -lang /tmp/MEGAcmd/sdk
 popd
 popd
 
