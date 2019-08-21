@@ -5,9 +5,6 @@ set -x
 date
 start_date=$(date)
 
-ccache --version
-
-pbzip2 --version
 pbzip2 --help
 
 chmod 777 start_web.sh
@@ -15,6 +12,8 @@ chmod 777 start_web.sh
 cat /proc/cpuinfo
 
 export PATH="/tmp/usr/bin:${PATH}"
+
+ccache --version
 
 # export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
 # export CXXFLAGS="$CFLAGS"
