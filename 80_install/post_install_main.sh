@@ -26,6 +26,7 @@ export CCACHE_DIR=/tmp/ccache
 export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
 export CCACHE_SLOPPINESS=pch_defines,time_macros,file_macro,locale
+export CCACHE_HASHDIR=false
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
@@ -49,7 +50,7 @@ ccache -p
 # dir -R ${CCACHE_DIR}
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 60 make | tee /tmp/make_results.txt
+time timeout -sKILL 30 make | tee /tmp/make_results.txt
 popd
 popd
 
