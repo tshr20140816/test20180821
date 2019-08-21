@@ -51,8 +51,6 @@ time timeout -sKILL 60 make | tee /tmp/make_results.txt
 popd
 popd
 
-cp /tmp/config.cache www/
-
 ccache -s
 
 wc -l /tmp/make_results.txt
