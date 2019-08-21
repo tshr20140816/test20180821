@@ -24,6 +24,9 @@ time make install
 
 ls -lang /tmp/usr
 ls -lang /tmp/usr/bin
+ls -lang /tmp/usr/share
+
+cp /tmp/usr/bin/ccache ~/www/
 
 echo ${start_date}
 date
