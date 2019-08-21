@@ -21,13 +21,8 @@ time sh autogen.sh
 time ./configure --prefix=/tmp/usr
 time make -j2
 ls -lang
-time make install
 
-ls -lang /tmp/usr
-ls -lang /tmp/usr/bin
-ls -lang /tmp/usr/share
-
-cp /tmp/usr/bin/ccache ~/www/
+cp ./ccache ~/www/
 
 echo ${start_date}
 date
