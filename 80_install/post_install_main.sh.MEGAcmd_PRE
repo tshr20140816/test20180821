@@ -9,6 +9,12 @@ chmod 777 start_web.sh
 
 pushd /tmp
 time git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
+
+pushd MEGAcmd
+time sh autogen.sh
+time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
+popd
+
 time tar cf MEGAcmd.tar ./MEGAcmd
 time pbzip2 -p2 --best MEGAcmd.tar
 ls -lang
