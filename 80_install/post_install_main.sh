@@ -24,6 +24,7 @@ chmod +x /tmp/usr/bin/ccache
 export CCACHE_DIR=/tmp/ccache
 # export CCACHE_COMPILERCHECK=content
 export CCACHE_COMPILERCHECK=none
+export CCACHE_LOGFILE=/tmp/ccache.log
 
 pushd /tmp/usr/bin
 ln -s ccache gcc
@@ -73,6 +74,8 @@ time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
     ${WEBDAV_URL}ccache_cache.tar.bz2
 
 ccache -s
+
+cat /tmp/ccache.log
 
 echo ${start_date}
 date
