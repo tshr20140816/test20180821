@@ -11,3 +11,4 @@ libfreeimage-dev
 pbzip2
 # ccache
 libzstd-dev
+libb2-dev
