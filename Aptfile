@@ -1,14 +1,17 @@
-libcrypto++-dev
-libz-dev
-libsqlite3-dev
-libssl-dev
-libcurl4-openssl-dev
-libreadline-dev
-libpcre++-dev
-libsodium-dev
-libc-ares-dev
-libfreeimage-dev
+# -- megacmd --
+# libcrypto++-dev
+# libz-dev
+# libsqlite3-dev
+# libssl-dev
+# libcurl4-openssl-dev
+# libreadline-dev
+# libpcre++-dev
+# libsodium-dev
+# libc-ares-dev
+# libfreeimage-dev
 pbzip2
-# ccache
+
+# -- ccache --
 libzstd-dev
 libb2-dev
+gperf
