@@ -8,4 +8,4 @@ libpcre++-dev
 libsodium-dev
 libc-ares-dev
 libfreeimage-dev
-# pbzip2
+pbzip2
