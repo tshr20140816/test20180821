@@ -2,8 +2,7 @@
 # megatools
 
 # -- curl --
-libssh2-1
-# brotli
+libssh2-1-dev
 libbrotli-dev
 
 # -- megacmd --
