@@ -38,6 +38,7 @@ popd
 
 curl --version
 /tmp/usr/bin/curl --version
+ldd /tmp/usr/bin/curl
 
 cp /tmp/usr/bin/curl ./www/
 
