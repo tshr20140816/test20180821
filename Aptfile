@@ -6,8 +6,8 @@ libssh2-1-dev
 libbrotli-dev
 libnghttp2-dev
 psl
-# libpsl
-# libpsl-dev
+libpsl
+libpsl-dev
 
 # -- megacmd --
 # libcrypto++-dev
