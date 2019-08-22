@@ -10,6 +10,10 @@ chmod 777 start_web.sh
 # pbzip2 --help
 # megatools --version
 
+# export CFLAGS="-O2 -march=native -mtune=native -fomit-frame-pointer"
+# export CXXFLAGS="$CFLAGS"
+# export LDFLAGS="-fuse-ld=gold"
+
 pushd /tmp
 
 time git clone --depth=1 -b release-0.1.3 https://github.com/metalink-dev/libmetalink.git
