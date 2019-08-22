@@ -13,7 +13,7 @@ megatools --version
 pushd /tmp
 curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
 tar xf curl-7.65.3.tar.xz
-pushd curl*
+pushd curl-7.65.3
 ls -lang
 popd
 popd
