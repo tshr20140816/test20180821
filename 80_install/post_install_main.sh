@@ -11,7 +11,16 @@ chmod 777 start_web.sh
 # megatools --version
 
 pushd /tmp
-curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
+
+time git clone --depth=1 -b release-0.1.3 https://github.com/metalink-dev/libmetalink.git
+pushd libmetalink
+./buildconf
+./configure --help
+./configure
+make
+popd
+
+# curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
 tar xf curl-7.65.3.tar.xz
 pushd curl-7.65.3
 # ls -lang
