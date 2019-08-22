@@ -6,6 +6,7 @@ libssh2-1-dev
 libbrotli-dev
 libnghttp2-dev
 libpsl5
+libpsl-dev
 
 # -- megacmd --
 # libcrypto++-dev
