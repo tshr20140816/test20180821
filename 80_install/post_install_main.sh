@@ -16,8 +16,9 @@ time git clone --depth=1 -b release-0.1.3 https://github.com/metalink-dev/libmet
 pushd libmetalink
 ./buildconf
 ./configure --help
-./configure
-make
+./configure --prefix=/tmp/usr
+time make
+make install
 popd
 
 # curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
