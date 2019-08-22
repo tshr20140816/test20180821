@@ -7,8 +7,10 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
-pbzip2 --help
-megatools --version
+# pbzip2 --help
+# megatools --version
+whereis psl
+whereis libpsl
 
 pushd /tmp
 curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
