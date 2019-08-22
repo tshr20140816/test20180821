@@ -21,6 +21,9 @@ time make
 make install
 popd
 
+ls -lang /tmp/usr
+ls -lang /tmp/usr/lib
+
 # curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
 tar xf curl-7.65.3.tar.xz
 pushd curl-7.65.3
