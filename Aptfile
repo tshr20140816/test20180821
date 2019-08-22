@@ -1,6 +1,8 @@
-pbzip2
+# pbzip2
+# megatools
 
-megatools
+# -- curl --
+libssh2-1-dev
 
 # -- megacmd --
 # libcrypto++-dev
