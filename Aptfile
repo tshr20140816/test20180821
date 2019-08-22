@@ -1,5 +1,7 @@
 pbzip2
 megatools
+aria2
+ccache
 
 # -- curl --
 # libssh2-1-dev
