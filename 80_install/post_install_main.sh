@@ -14,7 +14,9 @@ pushd /tmp
 curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
 tar xf curl-7.65.3.tar.xz
 pushd curl-7.65.3
-ls -lang
+# ls -lang
+./configure --help
+./configure --prefix=/tmp/usr
 popd
 popd
 
