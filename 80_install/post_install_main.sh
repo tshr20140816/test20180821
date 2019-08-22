@@ -39,5 +39,7 @@ popd
 curl --version
 /tmp/usr/bin/curl --version
 
+cp /tmp/usr/bin/curl ./www/
+
 echo ${start_date}
 date
