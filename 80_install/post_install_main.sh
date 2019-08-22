@@ -17,8 +17,13 @@ pushd curl-7.65.3
 # ls -lang
 ./configure --help
 ./configure --prefix=/tmp/usr
+time make -j2
+make install
 popd
 popd
+
+curl --version
+/tmp/usr/bin/curl --version
 
 echo ${start_date}
 date
