@@ -1,13 +1,13 @@
-# pbzip2
-# megatools
+pbzip2
+megatools
 
 # -- curl --
-libssh2-1-dev
-libbrotli-dev
-libnghttp2-14
-libnghttp2-dev
-libpsl5
-libpsl-dev
+# libssh2-1-dev
+# libbrotli-dev
+# libnghttp2-14
+# libnghttp2-dev
+# libpsl5
+# libpsl-dev
 
 # -- megacmd --
 # libcrypto++-dev
