@@ -3,7 +3,8 @@
 
 # -- curl --
 libssh2-1
-brotli
+# brotli
+libbrotli-dev
 
 # -- megacmd --
 # libcrypto++-dev
