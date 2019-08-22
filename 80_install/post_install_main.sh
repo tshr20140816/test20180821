@@ -18,7 +18,7 @@ pushd curl-7.65.3
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
-  --with-gssapi --with-metalink
+  --with-gssapi --with-libmetalink
 time make -j2
 make install
 popd
