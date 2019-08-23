@@ -38,9 +38,12 @@ export CCACHE_DEBUG=true
 # popd
 
 pushd /tmp
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -O ${WEBDAV_URL}ccache_cache.tar.bz2 -O ${WEBDAV_URL}MEGAcmd.tar.bz2
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -O ${WEBDAV_URL}ccache_cache.tar.bz2 -O ${WEBDAV_URL}MEGAcmd.tar.bz2
 # tar xf ccache_cache.tar.bz2 &
-tar xf MEGAcmd.tar.bz2 &
+# tar xf MEGAcmd.tar.bz2 &
+
+time git clone --recursive --depth=1 --shallow-submodules https://github.com/meganz/MEGAcmd.git
+
 wait
 
 pushd MEGAcmd
@@ -50,6 +53,9 @@ ccache -s
 ccache -z
 ccache -p
 # dir -R ${CCACHE_DIR}
+
+time sh autogen.sh
+time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
 time timeout -sKILL 30 make CC='ccache gcc' CXX='ccache g++' | tee /tmp/make_results.txt
@@ -63,18 +69,18 @@ ccache -s
 
 wc -l /tmp/make_results.txt
 
-pushd /tmp
-rm -f ccache_cache.tar.bz2
+# pushd /tmp
+# rm -f ccache_cache.tar.bz2
 # tar -I pbzip2 cf ccache_cache.tar.bz2 ./ccache
-time tar cf ccache_cache.tar ./ccache
-time pbzip2 -p2 --fast ccache_cache.tar
-ls -lang ccache_cache.tar.bz2
-if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
-  time tar jcf ccache_cache.tar.bz2 ./ccache
-  ls -lang ccache_cache.tar.bz2
-fi
-popd
-time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}ccache_cache.tar.bz2
+# time tar cf ccache_cache.tar ./ccache
+# time pbzip2 -p2 --fast ccache_cache.tar
+# ls -lang ccache_cache.tar.bz2
+# if [ ! -e /tmp/ccache_cache.tar.bz2 ]; then
+#   time tar jcf ccache_cache.tar.bz2 ./ccache
+#   ls -lang ccache_cache.tar.bz2
+# fi
+# popd
+# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X DELETE ${WEBDAV_URL}ccache_cache.tar.bz2
 # time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -X PUT \
 #     -H "Content-Type: application/x-compress" \
 #     --data-binary @/tmp/ccache_cache.tar.bz2 \
