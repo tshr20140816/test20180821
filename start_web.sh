@@ -26,5 +26,5 @@ hostname -i
 
 printenv
 
-# vendor/bin/heroku-php-apache2 -C apache.conf www
-distccd –daemon –port ${PORT}
+vendor/bin/heroku-php-apache2 -C apache.conf www
+# distccd –daemon –port ${PORT}
