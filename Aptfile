@@ -3,7 +3,6 @@ pbzip2
 # megatools
 # aria2
 # ccache
-dh-autoreconf
 
 # -- curl --
 # libssh2-1-dev
@@ -14,16 +13,16 @@ dh-autoreconf
 # libpsl-dev
 
 # -- megacmd --
-libcrypto++-dev
-libz-dev
-libsqlite3-dev
-libssl-dev
-libcurl4-openssl-dev
-libreadline-dev
-libpcre++-dev
-libsodium-dev
-libc-ares-dev
-libfreeimage-dev
+# libcrypto++-dev
+# libz-dev
+# libsqlite3-dev
+# libssl-dev
+# libcurl4-openssl-dev
+# libreadline-dev
+# libpcre++-dev
+# libsodium-dev
+# libc-ares-dev
+# libfreeimage-dev
 
 # -- ccache --
 # libzstd-dev
