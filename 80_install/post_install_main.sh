@@ -22,7 +22,7 @@ cat /proc/cpuinfo
 # chmod +x /tmp/usr/bin/ccache
 
 export CCACHE_DIR=/tmp/ccache
-# export CCACHE_COMPILERCHECK=content
+export CCACHE_COMPILERCHECK=content
 export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
 export CCACHE_SLOPPINESS=pch_defines,time_macros,file_macro
