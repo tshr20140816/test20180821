@@ -24,4 +24,6 @@ cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e proce
 
 hostname -i
 
+printenv
+
 vendor/bin/heroku-php-apache2 -C apache.conf www
