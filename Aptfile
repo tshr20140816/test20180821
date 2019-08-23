@@ -3,6 +3,7 @@ pbzip2
 # megatools
 # aria2
 # ccache
+parallel
 
 # -- curl --
 # libssh2-1-dev
