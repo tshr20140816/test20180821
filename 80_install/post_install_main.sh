@@ -58,7 +58,9 @@ time sh autogen.sh
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 30 make CC='ccache gcc' CXX='ccache g++' | tee /tmp/make_results.txt
+export CC='ccache gcc'
+export CXX='ccache g++'
+time timeout -sKILL 30 make | tee /tmp/make_results.txt
 # ls -lang /tmp/MEGAcmd/sdk/src
 # cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-input-text
 cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-log
