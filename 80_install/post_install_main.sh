@@ -52,7 +52,7 @@ ccache -p
 # dir -R ${CCACHE_DIR}
 
 # time timeout -sKILL 90 make -j2 | tee /tmp/make_results.txt
-time timeout -sKILL 30 CC='ccache gcc' CXX='ccache g++' make | tee /tmp/make_results.txt
+time timeout -sKILL 30 make CC='ccache gcc' CXX='ccache g++' | tee /tmp/make_results.txt
 # ls -lang /tmp/MEGAcmd/sdk/src
 # cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-input-text
 cat /tmp/MEGAcmd/sdk/src/src_libmega_la-megaclient.o.ccache-log
