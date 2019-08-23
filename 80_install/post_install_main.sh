@@ -38,10 +38,10 @@ export CCACHE_DEBUG=true
 # popd
 
 pushd /tmp
-# time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -O ${WEBDAV_URL}ccache_cache.tar.bz2 -O ${WEBDAV_URL}MEGAcmd.tar.bz2
+time curl -u ${WEBDAV_USER}:${WEBDAV_PASSWORD} -O ${WEBDAV_URL}ccache_cache.tar.bz2 -O ${WEBDAV_URL}MEGAcmd.tar.bz2
 # tar xf ccache_cache.tar.bz2 &
-# tar xf MEGAcmd.tar.bz2 &
-# wait
+tar xf MEGAcmd.tar.bz2 &
+wait
 
 pushd MEGAcmd
 
