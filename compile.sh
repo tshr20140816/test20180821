@@ -17,6 +17,6 @@ pushd MEGAcmd
 time sh autogen.sh
 time ./configure --prefix=/tmp/usr --disable-curl-checks --enable-static=yes --enable-shared=no
 
-time make -j8 1>&2
+time make -j8
 popd
 popd
