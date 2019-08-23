@@ -23,7 +23,7 @@ chmod +x /tmp/usr/bin/ccache
 
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_COMPILERCHECK=content
-export CCACHE_COMPILERCHECK=none
+# export CCACHE_COMPILERCHECK=none
 export CCACHE_LOGFILE=/tmp/ccache.log
 export CCACHE_SLOPPINESS=time_macros,file_macro,system_headers,locale
 export CCACHE_NOHASHDIR=true
