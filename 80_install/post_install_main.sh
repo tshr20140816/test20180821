@@ -10,7 +10,7 @@ chmod 777 start_web.sh
 # pbzip2 --help
 # megatools --version
 
-cat << '__HEREDOC__' | parallel
+cat << '__HEREDOC__' | parallel --pipe
 curl -v -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcs.phar
 curl -v -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcbf.phar
 __HEREDOC__
