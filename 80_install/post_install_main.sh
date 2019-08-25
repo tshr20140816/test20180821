@@ -10,12 +10,10 @@ chmod 777 start_web.sh
 # pbzip2 --help
 # megatools --version
 
-nautilus --version
-
 pushd /tmp
 curl -O https://linux.dropbox.com/packages/dropbox.py
 chmod +x dropbox.py
-time timeout -sKILL 30 ./dropbox.py --version
+time timeout -sKILL 30 ./dropbox.py help
 popd
 
 ls -lang /tmp/usr
