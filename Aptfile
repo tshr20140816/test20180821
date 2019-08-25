@@ -7,6 +7,7 @@ parallel
 
 # --dropbox cli --
 python3-gpg
+python-gpgme
 
 # -- curl --
 # libssh2-1-dev
