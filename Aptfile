@@ -5,11 +5,6 @@ pbzip2
 # ccache
 parallel
 
-# -- dropbox cli --
-libnautilus-extension-dev
-nautilus-dropbox
-libnautilus-extension1a
-
 # -- curl --
 # libssh2-1-dev
 # libbrotli-dev
