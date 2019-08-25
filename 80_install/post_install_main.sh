@@ -15,7 +15,7 @@ nautilus --version
 pushd /tmp
 curl -O https://linux.dropbox.com/packages/dropbox.py
 chmod +x dropbox.py
-./dropbox.py --version
+time timeout -sKILL 30 ./dropbox.py --version
 popd
 
 ls -lang /tmp/usr
