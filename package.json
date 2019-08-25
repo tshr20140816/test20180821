@@ -11,6 +11,6 @@
     "chartjs-plugin-annotation": "^0.5.7"
   },
   "scripts": {
-    "heroku-postbuild": "post_install_nodejs.sh"
+    "heroku-postbuild": "bash post_install_nodejs.sh"
   }
 }
