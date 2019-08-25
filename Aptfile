@@ -8,6 +8,7 @@ parallel
 # -- dropbox cli --
 libnautilus-extension-dev
 nautilus-dropbox
+nautilus
 
 # -- curl --
 # libssh2-1-dev
