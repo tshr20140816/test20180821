@@ -17,7 +17,7 @@ tar xf nautilus-dropbox.tar.bz2 -C nautilus-dropbox --strip-components 1
 ls -lang
 pushd nautilus-dropbox
 ./configure --help
-./configure --prefix=/tmp/usr
+./configure --prefix=/tmp/usr --with-gnu-ld
 time make
 time make install
 popd
