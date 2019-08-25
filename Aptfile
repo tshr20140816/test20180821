@@ -6,7 +6,8 @@ pbzip2
 parallel
 
 # -- dropbox cli --
-libnautilus-extension-dev
+# libnautilus-extension-dev
+nautilus-dropbox
 
 # -- curl --
 # libssh2-1-dev
