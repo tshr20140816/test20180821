@@ -13,16 +13,9 @@ chmod 777 start_web.sh
 nautilus --version
 
 pushd /tmp
-curl -o nautilus-dropbox.tar.bz2 https://linux.dropbox.com/packages/nautilus-dropbox-2019.02.14.tar.bz2
-mkdir nautilus-dropbox
-tar xf nautilus-dropbox.tar.bz2 -C nautilus-dropbox --strip-components 1
-ls -lang
-pushd nautilus-dropbox
-./configure --help
-./configure --prefix=/tmp/usr --with-gnu-ld
-time make
-time make install
-popd
+curl -O https://linux.dropbox.com/packages/dropbox.py
+chmod +x dropbox.py
+./dropbox.py --version
 popd
 
 ls -lang /tmp/usr
