@@ -17,8 +17,9 @@ chmod +x dropbox.py
 time timeout -sKILL 30 ./dropbox.py help
 time timeout -sKILL 30 ./dropbox.py version
 time timeout -sKILL 30 echo y|./dropbox.py update
-./dropbox.py start
-./dropbox.py status
+# ./dropbox.py start
+# ./dropbox.py lansync n
+# ./dropbox.py status
 popd
 
 echo ${start_date}
