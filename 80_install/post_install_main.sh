@@ -7,6 +7,8 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
+traceroute --help
+
 # pbzip2 --help
 # megatools --version
 
@@ -16,7 +18,7 @@ curl -v --compressed -O https://github.com/squizlabs/PHP_CodeSniffer/releases/do
 curl -v --compressed -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcbf.phar
 __HEREDOC__
 
-time cat jobs.txt | parallel -j2
+# time cat jobs.txt | parallel -j2
 
 ls -lang
 
