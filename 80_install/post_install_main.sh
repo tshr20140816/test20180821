@@ -7,7 +7,7 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
-traceroute --help
+tcproute --help
 
 # pbzip2 --help
 # megatools --version
