@@ -4,7 +4,7 @@ pbzip2
 # aria2
 # ccache
 parallel
-tcproute
+inetutils-traceroute
 
 # --dropbox cli --
 # python3-gpg
