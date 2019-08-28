@@ -4,10 +4,11 @@ pbzip2
 # aria2
 # ccache
 parallel
+traceroute
 
 # --dropbox cli --
-python3-gpg
-http://us.archive.ubuntu.com/ubuntu/pool/main/p/pygpgme/python3-gpgme_0.3-1.1_amd64.deb
+# python3-gpg
+# http://us.archive.ubuntu.com/ubuntu/pool/main/p/pygpgme/python3-gpgme_0.3-1.1_amd64.deb
 
 # -- curl --
 # libssh2-1-dev
