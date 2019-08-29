@@ -4,6 +4,8 @@ pbzip2
 # aria2
 # ccache
 parallel
+pxz
+lbzip2
 
 # --dropbox cli --
 # python3-gpg
