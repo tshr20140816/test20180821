@@ -29,7 +29,7 @@ time cat jobs.txt | parallel -j4 --joblog /tmp/joblog.txt 2>&1
 cat /tmp/joblog.txt
 
 ls -lang
-time unzip migu-1m.zip
+time unzip -j migu-1m.zip
 ls -lang
 
 echo ${start_date}
