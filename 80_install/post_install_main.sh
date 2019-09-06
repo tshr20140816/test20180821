@@ -18,7 +18,7 @@ __HEREDOC__
 
 # time cat jobs.txt | parallel -j2
 
-curl -v -o migu-1m-20150712.zip https://ja.osdn.net/frs/redir.php?m=iij&f=mix-mplus-ipa%2F63545%2Fmigu-1m-20150712.zip
+curl -v -o migu-1m-20150712.zip https://ja.osdn.net/frs/redir.php?m=iij&f=mix-mplus-ipa/63545/migu-1m-20150712.zip
 
 ls -lang
 unzip migu-1m-20150712.zip
