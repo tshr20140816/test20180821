@@ -17,7 +17,7 @@ curl -v -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/
 curl -v -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcbf.phar
 __HEREDOC__
 
-time cat jobs.txt | parallel -j2 --joblog /tmp/joblog.txt 2>&1
+time cat jobs.txt | parallel -j4 --joblog /tmp/joblog.txt 2>&1
 
 # time curl -v -L -o migu-1m-20150712.zip "https://ja.osdn.net/frs/redir.php?m=iij&f=mix-mplus-ipa/63545/migu-1m-20150712.zip"
 
