@@ -18,13 +18,16 @@ fi
 
 htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
 
-gcc -c -Q -march=native --help=target
-grep -c -e processor /proc/cpuinfo
-cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
+# gcc -c -Q -march=native --help=target
+# grep -c -e processor /proc/cpuinfo
+# cat /proc/cpuinfo | head -n $(($(cat /proc/cpuinfo | wc -l) / $(grep -c -e processor /proc/cpuinfo)))
 
-hostname -i
+# hostname -i
 
-printenv
+# printenv
+
+ln -s /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so /lib/x86_64-linux-gnu/liblzo2.so.2.0.0
+pixz -V
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
 # distccd –daemon –port ${PORT}
