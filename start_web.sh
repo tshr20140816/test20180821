@@ -5,6 +5,7 @@ set -x
 export TZ=JST-9
 
 export USER_AGENT=$(curl https://raw.githubusercontent.com/tshr20140816/heroku-mode-07/master/useragent.txt)
+export WEB_CONCURRENCY=4
 
 if [ ! -v BASIC_USER ]; then
   echo "Error : BASIC_USER not defined."
@@ -27,6 +28,8 @@ htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
 # printenv
 
 ln -s /lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2
+ls -lang /app/.apt/usr/lib/x86_64-linux-gnu/
+ldd pixz
 pixz -V
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
