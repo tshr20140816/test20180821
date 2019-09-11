@@ -26,7 +26,7 @@ htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
 
 # printenv
 
-ln -s /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so /lib/x86_64-linux-gnu/liblzo2.so.2.0.0
+ln -s /lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2
 pixz -V
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
