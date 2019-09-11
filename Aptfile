@@ -6,6 +6,11 @@ pbzip2
 parallel
 pxz
 lbzip2
+outguess
+pixz
+liblzo2-dev
+liblzo2-2-udeb
+lrzip
 
 # --dropbox cli --
 # python3-gpg
