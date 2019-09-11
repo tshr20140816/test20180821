@@ -30,7 +30,7 @@ ln -s /lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/
 unlink /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so
 cp liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/
 ln -s /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so
-# ln -s /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2
+ln -s /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2
 ls -lang /app/.apt/usr/lib/x86_64-linux-gnu/
 whereis pixz
 ldd /app/.apt/usr/bin/pixz
