@@ -30,7 +30,7 @@ htpasswd -c -b .htpasswd ${BASIC_USER} ${BASIC_PASSWORD}
 ln -s /lib/x86_64-linux-gnu/liblzo2.so.2.0.0 /app/.apt/usr/lib/x86_64-linux-gnu/liblzo2.so.2
 ls -lang /app/.apt/usr/lib/x86_64-linux-gnu/
 whereis pixz
-ldd pixz
+ldd /app/.apt/usr/bin/pixz
 pixz -V
 
 vendor/bin/heroku-php-apache2 -C apache.conf www
