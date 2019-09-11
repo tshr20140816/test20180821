@@ -17,7 +17,7 @@ curl -sS -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2
 curl -sS -O https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.2/phpcbf.phar
 __HEREDOC__
 
-time cat jobs.txt | parallel -j4 --joblog /tmp/joblog.txt 2>&1
+# time cat jobs.txt | parallel -j4 --joblog /tmp/joblog.txt 2>&1
 
 cat /tmp/joblog.txt
 
