@@ -7,6 +7,10 @@ start_date=$(date)
 
 chmod 777 start_web.sh
 
+cp /lib/x86_64-linux-gnu/liblzo2.so.2.0.0 ./
+
+ls -lang
+
 # pbzip2 --help
 # megatools --version
 
