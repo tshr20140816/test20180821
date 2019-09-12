@@ -28,9 +28,12 @@ popd
 ls -lang /tmp/usr
 ls -lang /tmp/usr/lib
 
-curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
-tar xf curl-7.65.3.tar.xz
-pushd curl-7.65.3
+# curl -O https://curl.haxx.se/download/curl-7.65.3.tar.xz
+# tar xf curl-7.65.3.tar.xz
+# pushd curl-7.65.3
+curl -O https://curl.haxx.se/download/curl-7.66.0.tar.xz
+tar xf curl-7.66.0.tar.xz
+pushd curl-7.66.0
 ./configure --help
 ./configure --prefix=/tmp/usr --enable-shared=no --enable-static=yes \
   --with-libssh2 --with-brotli --with-nghttp2 \
@@ -43,6 +46,8 @@ popd
 curl --version
 /tmp/usr/bin/curl --version
 ldd /tmp/usr/bin/curl
+
+/tmp/usr/bin/curl --help
 
 cp /tmp/usr/bin/curl ./www/
 
