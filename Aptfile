@@ -1,15 +1,12 @@
-pbzip2
+# pbzip2
 # distcc
 # megatools
 # aria2
 # ccache
 parallel
-pxz
 lbzip2
 outguess
-pixz
-liblzo2-dev
-liblzo2-2-udeb
+exiftool
 lrzip
 
 # --dropbox cli --
