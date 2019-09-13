@@ -8,6 +8,8 @@ start_date=$(date)
 git clone --depth 1 https://github.com/box/boxcli.git
 pushd boxcli
 npm i
+npm audit
+npm audit fix
 popd
 
 echo ${start_date}
