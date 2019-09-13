@@ -4,13 +4,11 @@
 # aria2
 # ccache
 
-# parallel
-# lbzip2
-# outguess
-# exiftool
-# lrzip
-
-parallel lbzip2 outguess exiftool lrzip
+parallel
+lbzip2
+outguess
+exiftool
+lrzip
 
 # --dropbox cli --
 # python3-gpg
