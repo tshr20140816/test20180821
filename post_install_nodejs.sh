@@ -12,7 +12,7 @@ start_date=$(date)
 # npm audit fix
 # popd
 
-time npm i npm-check-updates eslint
+# time npm i npm-check-updates eslint
 
 echo ${start_date}
 date
