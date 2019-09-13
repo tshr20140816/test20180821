@@ -14,12 +14,12 @@ lrzip
 # http://us.archive.ubuntu.com/ubuntu/pool/main/p/pygpgme/python3-gpgme_0.3-1.1_amd64.deb
 
 # -- curl --
-# libssh2-1-dev
-# libbrotli-dev
-# libnghttp2-14
-# libnghttp2-dev
-# libpsl5
-# libpsl-dev
+libssh2-1-dev
+libbrotli-dev
+libnghttp2-14
+libnghttp2-dev
+libpsl5
+libpsl-dev
 
 # -- megacmd --
 # libcrypto++-dev
