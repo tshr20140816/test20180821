@@ -1,7 +1,8 @@
 {
   "name": "node-js-cli",
   "engines": {
-    "node": "10.x"
+    "node": "10.x",
+    "yarn": "1.x"
   },
   "dependencies": {
     "npm-check-updates": "^3.1.21",
