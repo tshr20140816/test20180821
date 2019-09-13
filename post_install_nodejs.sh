@@ -14,5 +14,7 @@ start_date=$(date)
 
 # time npm i npm-check-updates eslint
 
+npm outdated
+
 echo ${start_date}
 date
