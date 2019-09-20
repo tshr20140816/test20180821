@@ -32,7 +32,7 @@ ls -lang migu-1m-20150712
 popd
 ls -lang
 
-tree -a /etc/
+find / -name lynx.cfg -print
 
 echo ${start_date}
 date
