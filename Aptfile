@@ -8,7 +8,8 @@ parallel
 lbzip2
 outguess
 exiftool
-lrzip
+# lrzip
+lynx
 
 # --dropbox cli --
 # python3-gpg
