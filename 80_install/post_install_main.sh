@@ -32,7 +32,7 @@ ls -lang migu-1m-20150712
 popd
 ls -lang
 
-tree /etc/
+tree -a /etc/
 
 echo ${start_date}
 date
