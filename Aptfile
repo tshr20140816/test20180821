@@ -10,6 +10,7 @@ outguess
 exiftool
 # lrzip
 lynx
+tree
 
 # --dropbox cli --
 # python3-gpg
