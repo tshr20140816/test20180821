@@ -12,6 +12,7 @@ $options = [
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_2TLS,
             CURLOPT_TIMEOUT => 25,
+            CURLOPT_HEADER => true,
            ];
 
 $ch = curl_init();
