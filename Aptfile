@@ -11,6 +11,7 @@ exiftool
 # lrzip
 lynx
 tree
+git-lfs
 
 # --dropbox cli --
 # python3-gpg
