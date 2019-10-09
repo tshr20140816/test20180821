@@ -17,6 +17,9 @@ ls -lang
 tar xf v1.0.7.tar.gz --strip-components 1
 rm v1.0.7.tar.gz
 ls -lang
+./configure --help
+./configure --prefix=/tmp/usr
+time make -j2
 popd
 popd
 
