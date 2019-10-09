@@ -12,7 +12,7 @@ pushd /tmp/
 ymd=$(date +'%Y%m%d')
 mkdir ${ymd}
 pushd ${ymd}
-curl -v -O https://github.com/google/brotli/archive/v1.0.7.tar.gz
+curl -L -O https://github.com/google/brotli/archive/v1.0.7.tar.gz
 ls -lang
 tar xf v1.0.7.tar.gz --strip-components 1
 rm v1.0.7.tar.gz
