@@ -21,8 +21,13 @@ ls -lang
 ./configure --prefix=/tmp/usr
 time make -j2
 tree
+cp ./bin/brotli
 popd
 popd
+
+cp /tmp/${ymd}/bin/brotli www/
+
+ldd www/brotli
 
 echo ${start_date}
 date
