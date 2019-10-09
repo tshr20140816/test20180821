@@ -20,6 +20,7 @@ ls -lang
 ./configure --help
 ./configure --prefix=/tmp/usr
 time make -j2
+tree
 popd
 popd
 
