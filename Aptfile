@@ -1,16 +1,18 @@
+cmake
+
 # pbzip2
 # distcc
 # megatools
 # aria2
 # ccache
 
-parallel
-lbzip2
-outguess
-exiftool
+# parallel
+# lbzip2
+# outguess
+# exiftool
 # lrzip
-lynx
-tree
+# lynx
+# tree
 
 # --dropbox cli --
 # python3-gpg
