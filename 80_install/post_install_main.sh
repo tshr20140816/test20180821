@@ -21,7 +21,6 @@ ls -lang
 ./configure --prefix=/tmp/usr
 time make -j2
 tree
-cp ./bin/brotli
 popd
 popd
 
