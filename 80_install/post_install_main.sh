@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -x
+
+date
+start_date=$(date)
+
+chmod 777 start_web.sh
+
+pushd /tmp/
+
+ymd=$(date +'%Y%m%d')
+mkdir ${ymd}
+pushd ${ymd}
+curl -O https://github.com/google/brotli/archive/v1.0.7.tar.gz
+tar xf v1.0.7.tar.gz --strip-components 1
+rm v1.0.7.tar.gz
+ls -lang
+popd
+popd
+
+echo ${start_date}
+date
