@@ -1,4 +1,5 @@
 cmake
+tree
 
 # pbzip2
 # distcc
@@ -12,7 +13,6 @@ cmake
 # exiftool
 # lrzip
 # lynx
-# tree
 
 # --dropbox cli --
 # python3-gpg
